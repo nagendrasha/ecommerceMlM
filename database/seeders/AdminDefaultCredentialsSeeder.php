@@ -14,7 +14,8 @@ class AdminDefaultCredentialsSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { 
+        
         User::create([
             'role' => 1,
             'name' => 'Admin',
