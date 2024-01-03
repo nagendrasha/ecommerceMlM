@@ -1,0 +1,150 @@
+.ec-cat-list table tbody tr td {
+    vertical-align: middle;
+}
+.badge{
+    font-size: 10px;
+}
+.ec-cat-list.card.card-default .card-body{
+    box-shadow: #315a8333 0px 8px 24px;
+    border-radius: 10px;
+}
+.card.card-mini.dash-card .card-body{
+    border-radius: 10px;
+ 
+    box-shadow: #315a8333 0px 8px 24px;
+}
+.dash-card .card-body span{
+    background: #1a283e;
+}
+#header nav.navbar.navbar-static-top.navbar-expand-lg {
+    background: #1a283e !important;
+}
+.ec-sidebar-light .ec-left-sidebar{
+    background: #1a283e !important;
+}
+.sidenav-item-link .nav-text{
+    color: #a6aab4 !important;
+}
+.ec-sidebar-light .sidebar .sub-menu {
+    background-color: #213048;
+}
+.btn.btn-primary{
+    background-color: #11235A;
+    border-color:#11235A;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.ec-cat-list.card.card-default.mb-24px .card-body {
+    border: 2px groove black;
+}
+.ec-cat-list.card.card-default.mb-24px .card-body .ec-cat-form input {
+    border: 1px solid #ddd !important;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border-radius: 4px;
+}
+.ec-cat-list.card.card-default.mb-24px .card-body .ec-cat-form textarea {
+    border: 1px solid #ddd !important;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border-radius: 4px;
+}
+.ec-brand a img {
+    max-width: 120px !important;
+}
+.action_btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.action_btn i{
+    color: #1A283E;
+    cursor: pointer;
+}
+.ec-user-card.card.card-default.p-4 {
+    position: relative;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.ec-user-card.card.card-default.p-4:before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #1a283e;
+    content: "";
+}
+.sidebar .sidebar-inner > li > a:hover{
+    background-color: #304669;
+}
+.ec-cat-form form label{
+    color: #000;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+.ec-cat-form h4{
+    color: #000;
+    font-weight: 700;
+}
+.row.justify-content-between.bottom-information {
+    margin-right: 0 !important;
+    --bs-gutter-x: 0rem !important;
+    gutter-x: 0rem !important;
+  }
+
+  div#responsive-data-table_paginate {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+div#responsive-data-table_paginate a{
+    padding: 5px 10px;
+    background: #1a283e;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+div#responsive-data-table_length select {
+    padding: 5px 10px;
+}
+div#responsive-data-table_filter input {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+}
+#responsive-data-table_filter{
+    text-align: right;
+}
+
+
+.success{
+    color:green;
+}
+
+.danger{
+    color:red;
+}
+.bgb{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.dataTables_empty{
+    text-align: center;
+}
+.bgb-n input{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+    border-radius: 4px !important;
+  }
+
+  .bgb-n select{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+    border-radius: 4px !important;
+
+  }
+  .bgb-n textarea{
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+    border-radius: 4px !important;
+
+    }
+    .bgb-n label{
+        color: #000;
+    }
