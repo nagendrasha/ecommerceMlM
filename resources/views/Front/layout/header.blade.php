@@ -104,12 +104,11 @@
 
                            <!-- Header User Start -->
                            <div class="ec-header-user dropdown">
-                               <button class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fi-rr-user"></i><span
-                                       class="ec-btn-title">Login</span></button>
-                               <ul class="dropdown-menu dropdown-menu-right">
-                                   <li><a class="dropdown-item" href="{{route('frontend_register_page')}}">Register</a></li>
-                                   <li><a class="dropdown-item" href="{{route('frontend_checkout')}}">Checkout</a></li>
-                                   <li><a class="dropdown-item" href="{{route('frontend_login_page')}}">Login</a></li>
+                               
+                                
+                                    <a href="{{route('frontend_user_login_page')}}"><i class="fi-rr-user"></i><span
+                                       class="ec-btn-title">Login</span></a>
+                         
                                </ul>
                            </div>
                            <!-- Header User End -->
@@ -130,9 +129,9 @@
                            <div class="ec-header-user dropdown">
                                <button class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fi-rr-user"></i></button>
                                <ul class="dropdown-menu dropdown-menu-right">
-                                   <li><a class="dropdown-item" href="{{route('frontend_register_page')}}">Register</a></li>
+                                   <li><a class="dropdown-item" href="{{route('frontend_user_register_page')}}">Register</a></li>
                                    <li><a class="dropdown-item" href="{{route('frontend_checkout')}}">Checkout</a></li>
-                                   <li><a class="dropdown-item" href="{{route('frontend_login_page')}}">Login</a></li>
+                                   <li><a class="dropdown-item" href="{{route('frontend_user_login_page')}}">Login</a></li>
                                </ul>
                            </div>
                            <!-- Header User End -->

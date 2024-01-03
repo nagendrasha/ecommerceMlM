@@ -16,6 +16,7 @@ class AdminDefaultCredentialsSeeder extends Seeder
     public function run()
     {
         User::create([
+            'role' => 1,
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => password_hash('admin@12345',PASSWORD_DEFAULT)
