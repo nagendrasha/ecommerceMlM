@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+
 class BlogUsController extends Controller
 {
     public function Index()
