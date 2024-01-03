@@ -14,7 +14,8 @@ class AdminDefaultCredentialsSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    { 
+        
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
