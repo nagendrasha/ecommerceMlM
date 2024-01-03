@@ -107,8 +107,10 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="section-title">
+                    @if(count($faqs) > 0)
                     <h2 class="ec-bg-title">FAQ</h2>
                     <h2 class="ec-title">FAQ</h2>
+                    @endif
                     {{-- <p class="sub-title mb-3">Customer service management</p> --}}
                 </div>
             </div>
@@ -187,8 +189,9 @@
                 @endforeach
                 @else
                 <div class="col-md-12 col-sm-12 ec-blog-block">
-                    <h2>No Faqs Found</h2>
-                    <p>We Will publish our faq soon.</p>
+                    
+                    <h2 class="text-center">No Faqs Found</h2>
+                    <p class="text-center">We Will publish our faq soon.</p>
 
                 </div>
                 @endif
