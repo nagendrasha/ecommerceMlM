@@ -373,11 +373,31 @@
 <script src="{{asset('Front/assets/js/plugins/slick.min.js')}}"></script>
 <script src="{{asset('Front/assets/js/plugins/infiniteslidev2.js')}}"></script>
 <script src="{{asset('Front/assets/js/plugins/chat-pro.js')}}"></script>
+<script src="{{asset('Front/assets/js/vendor/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('Front/assets/js/plugins/jquery.sticky-sidebar.js')}}"></script>
 
 <!-- Main Js -->
 <script src="{{asset('Front/assets/js/vendor/index.js')}}"></script>
+<script src="{{asset('Front/assets/js/main.js')}}"></script>
 <script src="{{asset('Front/assets/js/demo-5.js')}}"></script>
 
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 <script>
     $('#ec_cat').owlCarousel({
     loop:true,
