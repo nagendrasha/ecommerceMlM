@@ -15,7 +15,7 @@ class AdminDefaultCredentialsSeeder extends Seeder
      */
     public function run()
     { 
-        DB::table('users')->truncate();
+        // DB::table('users')->truncate();
         User::create([
             'role' => 1,
             'name' => 'Admin',
