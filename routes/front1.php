@@ -25,7 +25,7 @@ Route::get('/product-detail/{id}',[ProductController::class,'Detail'])->name('pr
 Route::post('save-review',[ProductController::class,'saveReview'])->name('save_review');
 
 
-Route::group(['prefix'=>'user'],function(){
+Route::group(['prefix'=>'user','as'=>'user_'],function(){
     Route::get('/login',[AuthController::class,'LoginPage'])->name('login_page');
     Route::get('/register',[AuthController::class,'RegisterPage'])->name('register_page');
 });
