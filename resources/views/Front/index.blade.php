@@ -84,7 +84,7 @@
         <div class="ec-slide-item d-flex slide-1 ">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">new arrival</h2>
                             <h1 class="ec-slide-title">stylish headphone</h1>
@@ -99,7 +99,7 @@
         <div class="ec-slide-item d-flex slide-2 ">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">Trending Item</h2>
                             <h1 class="ec-slide-title">Motion Camera</h1>
@@ -114,7 +114,7 @@
         <div class="ec-slide-item d-flex slide-3 ">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">new arrival</h2>
                             <h1 class="ec-slide-title">google nest</h1>

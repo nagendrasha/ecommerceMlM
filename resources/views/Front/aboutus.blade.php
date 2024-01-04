@@ -302,7 +302,7 @@
         </div>
         <div class="ec-insta-wrapper">
             <div class="ec-insta-outer">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="insta-auto">
                         <!-- instagram item -->
                         <div class="ec-insta-item">

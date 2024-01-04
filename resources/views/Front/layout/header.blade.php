@@ -32,8 +32,11 @@
 
    <!-- Main Style -->
    <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}" />
-   <link rel="stylesheet" href="{{asset('Front/assets/css/responsive.css')}}" />
+
    <link rel="stylesheet" href="{{asset('Front/assets/css/demo5.css')}}" />
+
+   <link rel="stylesheet" href="{{asset('Front/assets/css/responsive.css')}}" />
+   @stack('extra_links')
    <style>
        .slick-arrow:before{
            color:#fff;
