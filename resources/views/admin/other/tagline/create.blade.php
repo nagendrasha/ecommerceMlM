@@ -47,7 +47,7 @@
 
                                                 <div class="col-md-12">
                                                     <label class="form-label" for="Color">Color</label>
-                                                    <input type="text"
+                                                    <input type="color"
                                                         class="form-control @error('color') is-invalid @enderror"
                                                         id="color" name="color" placeholder="color.."
                                                         value="{{ old('color') }}" >
