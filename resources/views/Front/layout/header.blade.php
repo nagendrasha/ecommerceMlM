@@ -74,26 +74,35 @@
                    <div class="col header-top-center">
                        <!-- Language Start -->
                        <section id="aviso-urgente" class="aviso-urgente js-aviso-urgente">
-        <div class="aviso-urgente-interno">
-          
-          <ul class="aviso-urgente-interno-circular">
-            <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-um">
-               CUPOM PRIMEIRA VEZ
-            </li>
-           <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
-               FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 649
-            </li>
-            <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-tres">
-               DESCONTO DE 5% NO PIX 
-            </li>
+                            <div class="aviso-urgente-interno">
+                            
+                            <ul class="aviso-urgente-interno-circular">
+                                
+                                @if(count($taglines) > 0)
+                                @foreach($taglines as $tagline)
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-um" style="color:{{ $tagline->color }};">
+                                  <a href="{{ $tagline->link }}">{{ $tagline->title }}</a>
+                                </li>
+                                @foreach
+                                @else
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
+                                    No Tagline Found.
+                                </li>
+                                @endif
+                                {{-- <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
+                                    FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 649
+                                </li>
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-tres">
+                                    DESCONTO DE 5% NO PIX 
+                                </li>
 
-            <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-quatro">
-              COMPRAS ACIMA DE R$ 499 T_SHIRT
-            </li>
-          </ul>
-          
-        </div>
-    </section>
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-quatro">
+                                COMPRAS ACIMA DE R$ 499 T_SHIRT
+                                </li> --}}
+                            </ul>
+                            
+                            </div>
+                        </section>
                        <!-- Currency End -->
 
                    </div>

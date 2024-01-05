@@ -81,22 +81,27 @@
 <!-- Main Slider Start -->
 <div class="ec-main-slider section ">
     <div id="ec-slider">
-        <div class="ec-slide-item d-flex slide-1 ">
+        @if(count($sliders) > 0)
+        @foreach($sliders as $slider)
+        <div class="ec-slide-item d-flex slide-{{ $slider->id}} " style="background-image: url('{{ $slider->image}}')">
             <div class="container align-self-center">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
                         <div class="ec-slide-content slider-animation">
-                            <h2 class="ec-slide-stitle">new arrival</h2>
-                            <h1 class="ec-slide-title">stylish headphone</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                            <a href="#" class="btn btn-lg btn-secondary">Shop Now</a>
+                            <h2 class="ec-slide-stitle">{{ $slider->name}}</h2>
+                            <h1 class="ec-slide-title">{{ $slider->title}}</h1>
+                            <p>{{ $slider->short_description}}</p>
+                            <a href="{{ $slider->link}}" class="btn btn-lg btn-secondary">Shop Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ec-slide-item d-flex slide-2 ">
+        @endforeach
+        @else
+        <h4>No Slider found</h4>
+        @endif
+        {{-- <div class="ec-slide-item d-flex slide-2 ">
             <div class="container align-self-center">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
@@ -125,7 +130,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- Main Slider End -->
@@ -1627,11 +1632,16 @@
         <div class="row">
             <div class="ec-brand-outer col-12">
                 <ul  class="owl-carousel owl-theme" id="3rd-footer">
+                    @if(count($brands) > 0)
+                    @foreach($brands as $brand)
                     <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/1.png')}}" /></a></div>
+                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand" src="{{ $brand->image}}" /></a></div>
                     </li>
-                    <li class="ec-brand-item item">
+                    @endforeach
+                    @else
+                    {{-- <li class="col-md-4 ec-brand-item item text-center">No Brand Found </div> --}}
+                    @endif
+                    {{-- <li class="ec-brand-item item">
                         <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
                                     src="{{asset('Front/assets/images/brand-image/2.png')}}" /></a></div>
                     </li>
@@ -1654,7 +1664,7 @@
                     <li class="ec-brand-item item">
                         <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
                                     src="{{asset('Front/assets/images/brand-image/7.png')}}" /></a></div>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>
