@@ -32,8 +32,11 @@
 
    <!-- Main Style -->
    <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}" />
+
    <link rel="stylesheet" href="{{asset('Front/assets/css/responsive.css')}}" />
    <link rel="stylesheet" href="{{asset('Front/assets/css/demo5.css')}}" />
+
+   @stack('extra_links')
    <style>
        .slick-arrow:before{
            color:#fff;
@@ -53,9 +56,42 @@
    <!-- Header start  -->
    <header class="ec-header">
        <!--Ec Header Top Start -->
+                    <div class="container-fluid tt">
+                    <div class="row">
+                            <div class="col header-top-center d-md-none d-block">
+                       <!-- Language Start -->
+                       <section id="aviso-urgente" class="aviso-urgente js-aviso-urgente ">
+                            <div class="aviso-urgente-interno">
+                            
+                            <ul class="aviso-urgente-interno-circular">
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-um">
+                                CUPOM PRIMEIRA VEZ
+                                </li>
+                            <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
+                                FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 649
+                                </li>
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-tres">
+                                DESCONTO DE 5% NO PIX 
+                                </li>
+
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-quatro">
+                                COMPRAS ACIMA DE R$ 499 T_SHIRT
+                                </li>
+                            </ul>
+                            
+                            </div>
+                        </section>
+                       <!-- Currency End -->
+
+                   </div>
+            </div>
+                    </div>
        <div class="header-top">
+                    
            <div class="container">
-               <div class="row align-items-center">
+            
+               <div class="row align-items-center tb">
+                    
                    <!-- Header Top phone Start -->
                    <div class="col header-top-left">
                        <!-- Social Start -->
@@ -71,34 +107,33 @@
                    </div>
                    <!-- Header Top phone End -->
                    <!-- Header Top call Start -->
-                   <div class="col header-top-center">
+                   
+                   <div class="col header-top-center d-md-none d-block">
+                        <div class="header-logo  mb-0">
+                           <a href="{{url('/')}}"><img src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo"/><img
+                                   class="dark-logo" src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo"
+                                   style="display: none;" /></a>
+                       </div>
+                   </div>
+                   <div class="col header-top-center d-md-block d-none">
                        <!-- Language Start -->
-                       <section id="aviso-urgente" class="aviso-urgente js-aviso-urgente">
+                       <section id="aviso-urgente" class="aviso-urgente js-aviso-urgente ">
                             <div class="aviso-urgente-interno">
                             
                             <ul class="aviso-urgente-interno-circular">
-                                
-                                @if(count($taglines) > 0)
-                                @foreach($taglines as $tagline)
-                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-um" style="color:{{ $tagline->color }};">
-                                  <a href="{{ $tagline->link }}">{{ $tagline->title }}</a>
+                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-um">
+                                CUPOM PRIMEIRA VEZ
                                 </li>
-                                @foreach
-                                @else
-                                <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
-                                    No Tagline Found.
-                                </li>
-                                @endif
-                                {{-- <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
-                                    FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 649
+                            <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-dois">
+                                FRETE GRÁTIS EM COMPRAS ACIMA DE R$ 649
                                 </li>
                                 <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-tres">
-                                    DESCONTO DE 5% NO PIX 
+                                DESCONTO DE 5% NO PIX 
                                 </li>
 
                                 <li class="aviso-urgente-interno-circular-item aviso-urgente-interno-circular-item-quatro">
                                 COMPRAS ACIMA DE R$ 499 T_SHIRT
-                                </li> --}}
+                                </li>
                             </ul>
                             
                             </div>
@@ -228,7 +263,7 @@
 
                    <!-- Ec Header Logo Start -->
                    <div class="col">
-                       <div class="header-logo">
+                       <div class="header-logo d-md-block d-none">
                            <a href="{{url('/')}}"><img src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo" /><img
                                    class="dark-logo" src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo"
                                    style="display: none;" /></a>

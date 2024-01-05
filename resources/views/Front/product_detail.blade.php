@@ -2,6 +2,12 @@
 
 @section('content')
 
+@push('extra_links')
+    <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/kartik-v/bootstrap-star-rating/master/css/star-rating.min.css"/>
+@endpush
+
 
 
 <!-- ekka Cart Start -->
@@ -194,6 +200,21 @@
                                             <span class="ec-single-sku">SKU#: {{$product->sku}}</span>
                                         </div>
                                     </div>
+                                    <div class="ec-single-qty">
+                                        <div class="qty-plus-minus">
+                                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                                        </div>
+                                        <div class="ec-single-cart ">
+                                            <button class="btn btn-primary change">Buy Now</button>
+                                        </div>
+                                        <div class="ec-single-cart ">
+                                            <button class="btn btn-primary change">Add To Cart</button>
+                                        </div>
+                                        <div class="ec-single-wishlist">
+                                            <a class="ec-btn-group wishlist" title="Wishlist"><i
+                                                    class="fi-rr-heart"></i></a>
+                                        </div>
+                                    </div>
                                     @if($option_groups->count())
                                     @foreach($option_groups as $option_group)
                                     @if(count($option_group->getOption) > 0)
@@ -228,23 +249,7 @@
                                     @endif
                                     @endforeach
                                     @endif
-                                    <div class="ec-single-qty">
-                                        <div class="qty-plus-minus">
-                                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
-                                        </div>
-                                        <div class="ec-single-cart ">
-                                            <button class="btn btn-primary">Add To Cart</button>
-                                        </div>
-                                        <div class="ec-single-wishlist">
-                                            <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                    class="fi-rr-heart"></i></a>
-                                        </div>
-                                        <div class="ec-single-quickview">
-                                            <a href="#" class="ec-btn-group quickview" data-link-action="quickview"
-                                                title="Quick view" data-bs-toggle="modal"
-                                                data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
-                                        </div>
-                                    </div>
+                                    
                                     {{-- <div class="ec-single-social">
                                         <ul class="mb-0">
                                             <li class="list-inline-item facebook"><a href="#"><i
@@ -269,142 +274,133 @@
                     </div>
                 </div>
                 <!--Single product content End -->
-                <!-- Single product tab start -->
-                <div class="ec-single-pro-tab">
-                    <div class="ec-single-pro-tab-wrapper">
-                        <div class="ec-single-pro-tab-nav">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-details"
-                                        role="tablist">Detail</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-info"
-                                        role="tablist">More Information</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ec-spt-nav-review"
-                                        role="tablist">Reviews</a>
-                                </li>
+                <section class="mt-5 tab-section">
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Detail</button>
+                        <button class="tablinks" onclick="openCity(event, 'Paris')">More Information</button>
+                        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Reviews</button>
+                    </div>
+                    <div id="London" class="tabcontent">
+                        <div class="ec-single-pro-tab-desc">
+                            {{$product->description}}
+                        </div>
+                    </div>
+
+                    <div id="Paris" class="tabcontent">
+                        <div class="ec-single-pro-tab-moreinfo">
+                            <ul>
+                                @if($product->weight)
+                                <li><span>Weight</span> {{$product->weight}} {{$product->weight_class}}</li>
+                                @endif
+                                @if($product->length)
+                                <li><span>Length</span> {{$product->length}} {{$product->length_class}}</li>
+                                @endif
+                                @if($product->width)
+                                <li><span>Width</span> {{$product->width}} {{$product->length_class}}</li>
+                                @endif
+                                @if($product->height)
+                                <li><span>Height</span> {{$product->height}} {{$product->length_class}}</li>
+                                @endif
                             </ul>
                         </div>
-                        <div class="tab-content  ec-single-pro-tab-content">
-                            <div id="ec-spt-nav-details" class="tab-pane fade show active">
-                                <div class="ec-single-pro-tab-desc">
-                                    {{$product->description}}
-                                </div>
-                            </div>
-                            <div id="ec-spt-nav-info" class="tab-pane fade">
-                                <div class="ec-single-pro-tab-moreinfo">
-                                    <ul>
-                                        @if($product->weight)
-                                        <li><span>Weight</span> {{$product->weight}} {{$product->weight_class}}</li>
-                                        @endif
-                                        @if($product->length)
-                                        <li><span>Length</span> {{$product->length}} {{$product->length_class}}</li>
-                                        @endif
-                                        @if($product->width)
-                                        <li><span>Width</span> {{$product->width}} {{$product->length_class}}</li>
-                                        @endif
-                                        @if($product->height)
-                                        <li><span>Height</span> {{$product->height}} {{$product->length_class}}</li>
-                                        @endif
-                                    </ul>
-                                </div>
-                            </div>
+                    </div>
 
-                            <div id="ec-spt-nav-review" class="tab-pane fade">
-                                <div class="row">
-                                    <div class="ec-t-review-wrapper">
-                                        @foreach($product->getReview as $review)
-                                        <div class="ec-t-review-item">
-                                            <div class="ec-t-review-avtar">
-                                                <img src="{{asset('Front/assets/images/review-image/1.jpg')}}" alt="" />
-                                            </div>
-                                            <div class="ec-t-review-content">
-                                                <div class="ec-t-review-top">
-                                                    <div class="ec-t-review-name">{{$review->name}}</div>
-                                                    <div class="ec-t-review-rating">
-                                                        @for($i = 0; $i < $review->rating; $i++)
-                                                        <i class="ecicon eci-star fill"></i>
-                                                        @endfor
-                                                        @for($i = $review->rating; $i < 5; $i++)
-                                                        <i class="ecicon eci-star-o"></i>
-                                                        @endfor
-                                                    </div>
-                                                </div>
-                                                <div class="ec-t-review-bottom">
-                                                    <p>{{$review->comment}}</p>
-                                                </div>
+                    <div id="Tokyo" class="tabcontent">
+                        <div class="row">
+                            <div class="ec-t-review-wrapper">
+                                @foreach($product->getReview as $review)
+                                <div class="ec-t-review-item">
+                                    <div class="ec-t-review-avtar">
+                                        <img src="{{asset('Front/assets/images/review-image/1.jpg')}}" alt="" />
+                                    </div>
+                                    <div class="ec-t-review-content">
+                                        <div class="ec-t-review-top">
+                                            <div class="ec-t-review-name">{{$review->name}}</div>
+                                            <div class="ec-t-review-rating">
+                                                @for($i = 0; $i < $review->rating; $i++)
+                                                <i class="ecicon eci-star fill"></i>
+                                                @endfor
+                                                @for($i = $review->rating; $i < 5; $i++)
+                                                <i class="ecicon eci-star-o"></i>
+                                                @endfor
                                             </div>
                                         </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="ec-ratting-content">
-                                        <h3>Add a Review</h3>
-                                        <div class="ec-ratting-form">
-                                            <form action="{{route('frontend_save_review')}}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="product_id"
-                                                    value="{{encrypt($product->id)}}">
-                                                <div class="ec-ratting-star">
-                                                    <span>*Your rating:</span>
-                                                    <div class="ec-t-review-rating">
-                                                        <label for="">Bad</label>
-                                                        <input type="radio" name="rating" value="1" required>
-                                                        <input type="radio" name="rating" value="2" required>
-                                                        <input type="radio" name="rating" value="3" required>
-                                                        <input type="radio" name="rating" value="4" required>
-                                                        <input type="radio" name="rating" value="5" required>
-                                                        <label for="">Good</label>
-
-                                                        {{-- <i class="ecicon eci-star fill"></i>
-                                                        <i class="ecicon eci-star fill"></i>
-                                                        <i class="ecicon eci-star-o"></i>
-                                                        <i class="ecicon eci-star-o"></i>
-                                                        <i class="ecicon eci-star-o"></i> --}}
-                                                    </div>
-                                                </div>
-                                                <div class="ec-ratting-input">
-                                                    <input name="name" placeholder="Name*"
-                                                        class="@error('name') is-invalid @enderror" type="text"
-                                                        value="{{old('name')}}" required />
-                                                    @error('name')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="ec-ratting-input">
-                                                    <input name="email" placeholder="Email*"
-                                                        class="@error('email') is-invalid @enderror" type="email"
-                                                        value="{{old('email')}}" required />
-                                                    @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="ec-ratting-input form-submit">
-                                                    <textarea name="comment" placeholder="Enter Your Comment*"
-                                                        class="@error('comment') is-invalid @enderror"
-                                                        required>{{old('comment')}}</textarea>
-                                                    @error('comment')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                    <button class="btn btn-primary" type="submit"
-                                                        value="Submit">Submit</button>
-                                                </div>
-                                            </form>
+                                        <div class="ec-t-review-bottom">
+                                            <p>{{$review->comment}}</p>
                                         </div>
                                     </div>
+                                </div>
+                                @endforeach
+                            </div>
+                            <div class="ec-ratting-content">
+                                <h3>Add a Review</h3>
+                                <div class="ec-ratting-form">
+                                    <form class="form-group" action="{{route('frontend_save_review')}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" class="form-control" name="product_id"
+                                            value="{{encrypt($product->id)}}">
+                                        <div class="ec-ratting-star mb-4">
+                                            <span>*Your rating:</span>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                    <div class="star-rating">
+                                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                                        <span class="fa fa-star-o" data-rating="5"></span>
+                                                        <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="hlf-2">
+                                        <div class="ec-ratting-input mb-4 hlf">
+                                            <input name="name" placeholder="Name*"
+                                                class="@error('name') is-invalid @enderror form-control" type="text"
+                                                value="{{old('name')}}" required />
+                                            @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="ec-ratting-input mb-4 hlf">
+                                            <input name="email" placeholder="Email*"
+                                                class="@error('email') is-invalid @enderror form-control" type="email"
+                                                value="{{old('email')}}" required />
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        </div>
+                                        <div class="ec-ratting-input form-submit mb-4">
+                                            <textarea name="comment" placeholder="Enter Your Comment*"
+                                                class="@error('comment') is-invalid @enderror form-control"
+                                                required>{{old('comment')}}</textarea>
+                                            @error('comment')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                            
+                                        </div>
+                                        <button class="btn btn-primary change" type="submit"
+                                                value="Submit">Submit</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <!-- Single product tab start -->
+               
                 <!-- product details description area end -->
             </div>
 

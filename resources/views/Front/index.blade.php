@@ -86,7 +86,7 @@
         <div class="ec-slide-item d-flex slide-{{ $slider->id}} " style="background-image: url('{{ $slider->image}}')">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">{{ $slider->name}}</h2>
                             <h1 class="ec-slide-title">{{ $slider->title}}</h1>
@@ -104,7 +104,7 @@
         {{-- <div class="ec-slide-item d-flex slide-2 ">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">Trending Item</h2>
                             <h1 class="ec-slide-title">Motion Camera</h1>
@@ -119,7 +119,7 @@
         <div class="ec-slide-item d-flex slide-3 ">
             <div class="container align-self-center">
                 <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
                             <h2 class="ec-slide-stitle">new arrival</h2>
                             <h1 class="ec-slide-title">google nest</h1>
@@ -1631,7 +1631,7 @@
     <div class="container">
         <div class="row">
             <div class="ec-brand-outer col-12">
-                <ul  class="owl-carousel owl-theme" id="3rd-footer">
+                <ul  class="owl-carousel owl-theme rd-footer" id="3rd-footer">
                     @if(count($brands) > 0)
                     @foreach($brands as $brand)
                     <li class="ec-brand-item item">
@@ -1728,7 +1728,7 @@
 <section class="section ec-services-section">
     <h2 class="d-none">Services</h2>
     <div class="container">
-        <div class="row owl-carousel owl-theme" id="2nd-footer">
+        <div class="row owl-carousel owl-theme" id="nnd-footer">
             <div class="ec_ser_content ec_ser_content_1 item ">
                 <div class="ec_ser_inner">
                     <div class="ec-service-image">
