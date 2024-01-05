@@ -4,6 +4,8 @@
 
 @push('extra_links')
     <link rel="stylesheet" href="{{asset('Front/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/kartik-v/bootstrap-star-rating/master/css/star-rating.min.css"/>
 @endpush
 
 
@@ -339,16 +341,25 @@
                                             value="{{encrypt($product->id)}}">
                                         <div class="ec-ratting-star mb-4">
                                             <span>*Your rating:</span>
-                                            <div class="star-rating">
-                                                <span class="fa-solid fa-star" data-rating="1"></span>
-                                                <span class="fa-solid fa-star" data-rating="2"></span>
-                                                <span class="fa-solid fa-star" data-rating="3"></span>
-                                                <span class="fa-solid fa-star" data-rating="4"></span>
-                                                <span class="fa-solid fa-star" data-rating="5"></span>
-                                                <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                    <div class="star-rating">
+                                                        <span class="fa fa-star-o" data-rating="1"></span>
+                                                        <span class="fa fa-star-o" data-rating="2"></span>
+                                                        <span class="fa fa-star-o" data-rating="3"></span>
+                                                        <span class="fa fa-star-o" data-rating="4"></span>
+                                                        <span class="fa fa-star-o" data-rating="5"></span>
+                                                        <input type="hidden" name="whatever1" class="rating-value" value="2.56">
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                
                                             </div>
                                         </div>
-                                        <div class="ec-ratting-input mb-4">
+                                        <div class="hlf-2">
+                                        <div class="ec-ratting-input mb-4 hlf">
                                             <input name="name" placeholder="Name*"
                                                 class="@error('name') is-invalid @enderror form-control" type="text"
                                                 value="{{old('name')}}" required />
@@ -358,7 +369,7 @@
                                             </span>
                                             @enderror
                                         </div>
-                                        <div class="ec-ratting-input mb-4">
+                                        <div class="ec-ratting-input mb-4 hlf">
                                             <input name="email" placeholder="Email*"
                                                 class="@error('email') is-invalid @enderror form-control" type="email"
                                                 value="{{old('email')}}" required />
@@ -367,6 +378,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
+                                        </div>
                                         </div>
                                         <div class="ec-ratting-input form-submit mb-4">
                                             <textarea name="comment" placeholder="Enter Your Comment*"
@@ -379,7 +391,7 @@
                                             @enderror
                                             
                                         </div>
-                                        <button class="btn btn-primary" type="submit"
+                                        <button class="btn btn-primary change" type="submit"
                                                 value="Submit">Submit</button>
                                     </form>
                                 </div>

@@ -380,7 +380,29 @@
 <script src="{{asset('Front/assets/js/vendor/index.js')}}"></script>
 <script src="{{asset('Front/assets/js/main.js')}}"></script>
 <script src="{{asset('Front/assets/js/demo-5.js')}}"></script>
+<script>
+    var $star_rating = $('.star-rating .fa');
 
+var SetRatingStar = function() {
+  return $star_rating.each(function() {
+    if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+      return $(this).removeClass('fa-star-o').addClass('fa-star');
+    } else {
+      return $(this).removeClass('fa-star').addClass('fa-star-o');
+    }
+  });
+};
+
+$star_rating.on('click', function() {
+  $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+  return SetRatingStar();
+});
+
+SetRatingStar();
+$(document).ready(function() {
+
+});
+</script>
 <script>
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -402,7 +424,7 @@ document.getElementById("defaultOpen").click();
     $('#ec_cat').owlCarousel({
     loop:true,
     margin:10,
-    nav:false,
+    nav:true,
     dots:false,
     autoplay:true,
     autoplayTimeout:4000,
@@ -464,32 +486,11 @@ document.getElementById("defaultOpen").click();
 })
 </script>
 <script>
-    $('#3rd-footer').owlCarousel({
+    $('#nnd-footer').owlCarousel({
     loop:true,
     margin:10,
+    nav:true,
     dots:false,
-    nav:false,
-    autoplay:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true,
-    responsive:{
-        0:{
-            items:2
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:6
-        }
-    }
-})
-</script>
-<script>
-    $('#2nd-footer').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:false,
     autoplay:true,
     autoplayTimeout:3000,
     autoplayHoverPause:true,
@@ -507,10 +508,33 @@ document.getElementById("defaultOpen").click();
 })
 </script>
 <script>
+    $('#3rd-footer').owlCarousel({
+    loop:true,
+    margin:10,
+    dots:false,
+    nav:true,
+    autoplay:true,
+    autoplayTimeout:3000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:2
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:6
+        }
+    }
+})
+</script>
+
+<script>
     $('#ec-exe-products').owlCarousel({
     loop:true,
     margin:10,
-    nav:false,
+    nav:true,
     dots:false,
     autoplay:true,
     autoplayTimeout:3000,
@@ -625,10 +649,10 @@ document.getElementById("defaultOpen").click();
   ]
 });
 </script>
-<script>
+<!-- <script>
     $('#ec-testimonial-slider').slick({
   slidesToShow: 3,
-  slidesToScroll: 1,
+  slidesToScroll: 2,
   autoplay: true,
   autoplaySpeed: 3000,
   responsive: [
@@ -643,7 +667,7 @@ document.getElementById("defaultOpen").click();
     },
   ]
 });
-</script>
+</script> -->
 <script>    
     $('#ec-brand-slider').slick({
   slidesToShow: 6,
