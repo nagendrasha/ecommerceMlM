@@ -1626,7 +1626,7 @@
     <div class="container">
         <div class="row">
             <div class="ec-brand-outer col-12">
-                <ul  class="owl-carousel owl-theme" id="3rd-footer">
+                <ul  class="owl-carousel owl-theme rd-footer" id="3rd-footer">
                     <li class="ec-brand-item item">
                         <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
                                     src="{{asset('Front/assets/images/brand-image/1.png')}}" /></a></div>
@@ -1718,7 +1718,7 @@
 <section class="section ec-services-section">
     <h2 class="d-none">Services</h2>
     <div class="container">
-        <div class="row owl-carousel owl-theme" id="2nd-footer">
+        <div class="row owl-carousel owl-theme" id="nnd-footer">
             <div class="ec_ser_content ec_ser_content_1 item ">
                 <div class="ec_ser_inner">
                     <div class="ec-service-image">
