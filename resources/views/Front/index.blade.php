@@ -1852,32 +1852,8 @@
                     </li>
                     @endforeach
                     @else
-                    {{-- <li class="col-md-4 ec-brand-item item text-center">No Brand Found </div> --}}
                     @endif
-                    {{-- <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/2.png')}}" /></a></div>
-                    </li>
-                    <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/3.png')}}" /></a></div>
-                    </li>
-                    <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/4.png')}}" /></a></div>
-                    </li>
-                    <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/5.png')}}" /></a></div>
-                    </li>
-                    <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/6.png')}}" /></a></div>
-                    </li>
-                    <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/7.png')}}" /></a></div>
-                    </li> --}}
+                    
                 </ul>
             </div>
         </div>
@@ -1942,50 +1918,29 @@
     <h2 class="d-none">Services</h2>
     <div class="container">
         <div class="row owl-carousel owl-theme" id="nnd-footer">
+            @if(count($services) > 0)
+            @foreach($services as $service)
             <div class="ec_ser_content ec_ser_content_1 item ">
                 <div class="ec_ser_inner">
                     <div class="ec-service-image">
-                        <i class="fi fi-ts-truck-moving"></i>
+                        @if(File::exists($service->image))
+                        <img src="{{url('/')}}/{{$service->image}}" width="20px" alt="{{$service->name}}">
+                        @else
+                        No Image
+                        @endif
+                        {{-- <i class="fi fi-ts-truck-moving"></i> --}}
                     </div>
                     <div class="ec-service-desc">
-                        <h2>Free shipping</h2>
-                        <p>Free shipping on all US orders</p>
+                        <h2>{{$service->name}}</h2>
+                        <p>{{$service->title}}</p>
                     </div>
                 </div>
             </div>
-            <div class="ec_ser_content ec_ser_content_2 item ">
-                <div class="ec_ser_inner">
-                    <div class="ec-service-image">
-                        <i class="fi fi-ts-donate"></i>
-                    </div>
-                    <div class="ec-service-desc">
-                        <h2>money gaurntee</h2>
-                        <p>30 days money back guarantee</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ec_ser_content ec_ser_content_3 item ">
-                <div class="ec_ser_inner">
-                    <div class="ec-service-image">
-                        <i class="fi fi-ts-circle-phone"></i>
-                    </div>
-                    <div class="ec-service-desc">
-                        <h2>online support</h2>
-                        <p>We support online 24/7 on day</p>
-                    </div>
-                </div>
-            </div>
-            <div class="ec_ser_content ec_ser_content_4 item ">
-                <div class="ec_ser_inner">
-                    <div class="ec-service-image">
-                        <i class="fi fi-ts-badge-percent"></i>
-                    </div>
-                    <div class="ec-service-desc">
-                        <h2>Member Discount</h2>
-                        <p>Onevery order over $120.00</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            @else
+            @endif
+            
+            
         </div>
     </div>
 </section>

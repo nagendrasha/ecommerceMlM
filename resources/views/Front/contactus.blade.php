@@ -2,6 +2,12 @@
 
 @section('content')
 
+<style>
+    .invalid-feedback
+    {
+        color:red;
+    }
+</style>
 
 <div class="ec-side-cart-overlay"></div>
 <div id="ec-side-cart" class="ec-side-cart">
@@ -110,31 +116,94 @@
                 <div class="ec-contact-leftside">
                     <div class="ec-contact-container">
                         <div class="ec-contact-form">
-                            <form action="#" method="post">
-                                <span class="ec-contact-wrap">
+                            {{-- <form action="#" method="post"> --}}
+                                @if (session('success'))
+                                    <div class="col-sm-12">
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            {{ session('success') }}
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                @endif
+                                <form action="{{route('frontend_save_contact_us')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <span class="ec-contact-wrap">
+                                        <label>First Name*</label>
+                                        <input type="text"
+                                            class="@error('first_name') is-invalid @enderror"
+                                            id="first_name" name="first_name" value="{{old('first_name')}}" placeholder="Enter your first name" >
+                                        @error('first_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </span>
+                                    
+                                    <span class="ec-contact-wrap">
+                                        <label>Last Name*</label>
+                                        <input type="text"
+                                            class="@error('last_name') is-invalid @enderror"
+                                            id="last_name" name="last_name" value="{{old('last_name')}}" placeholder="Enter your last name" >
+                                        @error('last_name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </span>
+                                    
+                                    <span class="ec-contact-wrap">
+                                        <label>Email*</label>
+                                        <input type="text"
+                                            class="@error('email_id') is-invalid @enderror"
+                                            id="email_id" name="email_id" value="{{old('email_id')}}" placeholder="Enter your Email" >
+                                        @error('email_id')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </span>
+                                    
+                                    <span class="ec-contact-wrap">
+                                        <label>Phone Number*</label>
+                                        <input type="text"
+                                            class="@error('phone_number') is-invalid @enderror"
+                                            id="phone_number" name="phone_number" value="{{old('phone_number')}}" placeholder="Enter your Phone Number" >
+                                        @error('phone_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </span>
+
+                                    <span class="ec-contact-wrap">
+                                        <label>Comments/Questions*</label>
+                                        <textarea name="comment"  value="{{old('comment')}}" placeholder="Please leave your comments here.."></textarea>
+                                       
+                                    </span>
+                                    <span class="ec-contact-wrap">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </span>
+                                    
+                                
+                                {{-- <span class="ec-contact-wrap">
                                     <label>First Name*</label>
-                                    <input type="text" name="firstname" placeholder="Enter your first name"
-                                        required />
+                                    <input type="text" name="first_name" placeholder="Enter your first name" required />
                                 </span>
                                 <span class="ec-contact-wrap">
                                     <label>Last Name*</label>
-                                    <input type="text" name="lastname" placeholder="Enter your last name"
-                                        required />
+                                    <input type="text" name="last_name" placeholder="Enter your last name" required />
                                 </span>
                                 <span class="ec-contact-wrap">
                                     <label>Email*</label>
-                                    <input type="email" name="email" placeholder="Enter your email address"
-                                        required />
+                                    <input type="email" name="email_id" placeholder="Enter your email address" required />
                                 </span>
                                 <span class="ec-contact-wrap">
                                     <label>Phone Number*</label>
-                                    <input type="text" name="phonenumber" placeholder="Enter your phone number"
-                                        required />
+                                    <input type="text" name="phone_number" placeholder="Enter your phone number" required />
                                 </span>
                                 <span class="ec-contact-wrap">
                                     <label>Comments/Questions*</label>
-                                    <textarea name="address"
-                                        placeholder="Please leave your comments here.."></textarea>
+                                    <textarea name="comments" placeholder="Please leave your comments here.."></textarea>
                                 </span>
                                 <span class="ec-contact-wrap ec-recaptcha">
                                     <span class="g-recaptcha"
@@ -147,7 +216,7 @@
                                 </span>
                                 <span class="ec-contact-wrap ec-contact-btn">
                                     <button class="btn btn-primary" type="submit">Submit</button>
-                                </span>
+                                </span> --}}
                             </form>
                         </div>
                     </div>
