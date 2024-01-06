@@ -107,7 +107,7 @@
             <div class="card">
                 <div class="card-header bg-primary">
                     <div class="ec-brand">
-                        <a href="index.html" title="Ekka">
+                        <a href="{{url('/')}}" title="Ekka">
                             <img class="ec-brand-icon" src="{{asset('admin/assets/img/logo/main-logo.png')}}" alt="" />
                         </a>
                     </div>
