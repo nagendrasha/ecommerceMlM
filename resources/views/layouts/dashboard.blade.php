@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v36/ekka-admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Dec 2023 17:51:24 GMT -->
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

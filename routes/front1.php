@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\FAQController;
 use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\OfferController;
 use App\Http\Controllers\Front\ProductController;
+use App\Http\Controllers\Front\UserDashboardController;
 
 Route::get('/',[IndexController::class,'Index'])->name('index');
 Route::get('/about-us',[AboutUsController::class,'Index'])->name('aboutus');
@@ -23,6 +24,11 @@ Route::get('/special-offer',[OfferController::class,'Offer'])->name('special_off
 Route::get('/our-product',[ProductController::class,'List'])->name('product_list');
 Route::get('/product-detail/{id}',[ProductController::class,'Detail'])->name('product_detail');
 Route::post('save-review',[ProductController::class,'saveReview'])->name('save_review');
+
+
+Route::group(['as'=>'user','prefix'=>'user'],function(){
+    Route::get('/dashboard',[UserDashboardController::class,'Dashboard'])->name('dashboard');
+});
 
 
 Route::group(['prefix'=>'user','as'=>'user_'],function(){

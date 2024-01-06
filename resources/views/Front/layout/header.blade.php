@@ -156,8 +156,10 @@
                            <div class="ec-header-user dropdown">
                                
                                 
-                                    <a href="{{route('frontend_user_login_page')}}"><i class="fi-rr-user"></i><span
-                                       class="ec-btn-title">Login</span></a>
+                                    <a href="{{route('frontend_user_login_page')}}">
+                                        <i class="fi-rr-user"></i><span
+                                       class="ec-btn-title">Login</span>
+                                    </a>
                          
                                </ul>
                            </div>
