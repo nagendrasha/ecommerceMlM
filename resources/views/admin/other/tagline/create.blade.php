@@ -46,6 +46,20 @@
                                                 </div>
 
                                                 <div class="col-md-12">
+                                                    <label class="form-label" for="Color">Color</label>
+                                                    <input type="color"
+                                                        class="form-control @error('color') is-invalid @enderror"
+                                                        id="color" name="color" placeholder="color.."
+                                                        value="{{ old('color') }}" >
+                                                        @error('color')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                                </div>
+
+
+                                                <div class="col-md-12">
                                                     <label class="form-label" for="link">Link</label>
                                                     <input type="url"
                                                         class="form-control @error('link') is-invalid @enderror"

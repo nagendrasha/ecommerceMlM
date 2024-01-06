@@ -59,7 +59,7 @@
                                     @foreach($dataArr as $index => $data)
                                     <tr>                       
                                         <td>{{++$index}}</td>                 
-                                        <td>{{$data->title}}</td>
+                                        <td><p style="color:{{$data->color}}">{{$data->title}}</p></td>
                                         <td>{{$data->sort}}</td>
                                         <td>{{$data->status ? 'Active' : 'Inactive'}}</td>
                                         <td>

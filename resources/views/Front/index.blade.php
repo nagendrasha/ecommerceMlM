@@ -81,22 +81,27 @@
 <!-- Main Slider Start -->
 <div class="ec-main-slider section ">
     <div id="ec-slider">
-        <div class="ec-slide-item d-flex slide-1 ">
+        @if(count($sliders) > 0)
+        @foreach($sliders as $slider)
+        <div class="ec-slide-item d-flex slide-{{ $slider->id}} " style="background-image: url('{{ $slider->image}}')">
             <div class="container align-self-center">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
                         <div class="ec-slide-content slider-animation">
-                            <h2 class="ec-slide-stitle">new arrival</h2>
-                            <h1 class="ec-slide-title">stylish headphone</h1>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                            <a href="#" class="btn btn-lg btn-secondary">Shop Now</a>
+                            <h2 class="ec-slide-stitle">{{ $slider->name}}</h2>
+                            <h1 class="ec-slide-title">{{ $slider->title}}</h1>
+                            <p>{{ $slider->short_description}}</p>
+                            <a href="{{ $slider->link}}" class="btn btn-lg btn-secondary">Shop Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="ec-slide-item d-flex slide-2 ">
+        @endforeach
+        @else
+        <h4>No Slider found</h4>
+        @endif
+        {{-- <div class="ec-slide-item d-flex slide-2 ">
             <div class="container align-self-center">
                 <div class="row">
                     <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 align-self-center px-2">
@@ -125,7 +130,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- Main Slider End -->
@@ -819,36 +824,40 @@
 
 <!--  offer Section Start -->
 <section class="section ec-offer-section section-space-mt section-space-mb" id="single-banner" style="text-align:center;">
+    @if(count($col_twelve) > 0)
+    @foreach($col_twelve as $data)
     <div class="container" >
         <div>
-        <div class="ec-offer-inner ofr-img">
-            <!-- <img src="{{asset('Front/assets/images/offer-image/offer_bg.png')}}" alt="" class="offer_bg" /> -->
+        <div class="ec-offer-inner ofr-img"  style="background-image:url({{$data->image}}) ">
             <div class="col-sm-6 ec-offer-content">
                 <div class="ec-offer-content-inner">
-                    <h2 class="ec-offer-stitle">black friday</h2>
+                    {{-- <h2 class="ec-offer-stitle">black friday</h2>
                     <h2 class="ec-offer-title">up to 60 % off</h2>
-                    <span class="ec-offer-desc">Select accessories for your favourites gadgets</span>
+                    <span class="ec-offer-desc">Select accessories for your favourites gadgets</span> --}}
                     <span class="ec-offer-btn"><a href="#" class="btn btn-primary">Shop Now</a></span>
                 </div>
             </div>
         </div>
         </div>
     </div>
+    @endforeach
+    @else
     <div class="container" >
         <div>
         <div class="ec-offer-inner ofr-img">
             <!-- <img src="{{asset('Front/assets/images/offer-image/offer_bg.png')}}" alt="" class="offer_bg" /> -->
             <div class="col-sm-6 ec-offer-content">
                 <div class="ec-offer-content-inner">
-                    <h2 class="ec-offer-stitle">black friday</h2>
-                    <h2 class="ec-offer-title">up to 60 % off</h2>
+                    <h2 class="ec-offer-stitle">No Banner Found</h2>
+                    {{-- <h2 class="ec-offer-title">up to 60 % off</h2>
                     <span class="ec-offer-desc">Select accessories for your favourites gadgets</span>
-                    <span class="ec-offer-btn"><a href="#" class="btn btn-primary">Shop Now</a></span>
+                    <span class="ec-offer-btn"><a href="#" class="btn btn-primary">Shop Now</a></span> --}}
                 </div>
             </div>
         </div>
         </div>
     </div>
+    @endif
 </section>
 <!-- offer Section End -->
 
@@ -1474,28 +1483,40 @@
             </div>
 
             <div class="col-lg-3 col-md-6 col-sm-12 col-xs-6 ec-right-banner-content dis-n-767 owl-carousel owl-theme"  id="short-banner">
+               
+               
+                @if(count($col_four) > 0)
+                @foreach($col_four as $data)
                 <div class="ec-right-banner-inner item">
                     <div class="right-banner-block">
-                            <img class="right-banner-img" src="{{asset('Front/assets/images/banner/22.png')}}" alt="Banner" />
-                            <div class="right-banner-content">
-                                <span class="ec-right-banner-title">mi 8 lite</span>
-                                <span class="ec-right-banner-stitle">selfies and style</span>
-                                <span class="ec-right-banner-btn"><a href="#" class="btn-primary">Add to cart</a></span>
-                            </div>
+                        @if(File::exists($data->image))
+                        <img src="{{url('/')}}/{{$data->image}}" width="50px" alt="">
+                        @else
+                        No Image
+                        @endif
+                        <div class="right-banner-content">
+                            <span class="ec-right-banner-title">mi 8 lite</span>
+                            <span class="ec-right-banner-stitle">selfies and style</span>
+                            <span class="ec-right-banner-btn"><a href="#" class="btn-primary">Add to cart</a></span>
+                        </div>
                     </div>
 
                 </div>
-                <div class="ec-right-banner-inner item">
-                    <div class="right-banner-block">
-                            <img class="right-banner-img" src="{{asset('Front/assets/images/banner/22.png')}}" alt="Banner" />
-                            <div class="right-banner-content">
-                                <span class="ec-right-banner-title">mi 8 lite</span>
-                                <span class="ec-right-banner-stitle">selfies and style</span>
-                                <span class="ec-right-banner-btn"><a href="#" class="btn-primary">Add to cart</a></span>
-                            </div>
-                    </div>
+                @endforeach
+                @else
+                   <div class="ec-right-banner-inner item">
+                        <div class="right-banner-block">
+                                <img class="right-banner-img" src="{{asset('Front/assets/images/banner/22.png')}}" alt="Banner" />
+                                <div class="right-banner-content">
+                                    <span class="ec-right-banner-title">No 4 coumn banner found </span>
+                                    <span class="ec-right-banner-stitle">selfies and style</span>
+                                    {{-- <span class="ec-right-banner-btn"><a href="#" class="btn-primary">Add to cart</a></span> --}}
+                                </div>
+                        </div>
 
-                </div>
+                    </div>
+                @endif
+                
             </div>
         </div>
     </div>
@@ -1824,11 +1845,16 @@
         <div class="row">
             <div class="ec-brand-outer col-12">
                 <ul  class="owl-carousel owl-theme rd-footer" id="3rd-footer">
+                    @if(count($brands) > 0)
+                    @foreach($brands as $brand)
                     <li class="ec-brand-item item">
-                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
-                                    src="{{asset('Front/assets/images/brand-image/1.png')}}" /></a></div>
+                        <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand" src="{{ $brand->image}}" /></a></div>
                     </li>
-                    <li class="ec-brand-item item">
+                    @endforeach
+                    @else
+                    {{-- <li class="col-md-4 ec-brand-item item text-center">No Brand Found </div> --}}
+                    @endif
+                    {{-- <li class="ec-brand-item item">
                         <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
                                     src="{{asset('Front/assets/images/brand-image/2.png')}}" /></a></div>
                     </li>
@@ -1851,7 +1877,7 @@
                     <li class="ec-brand-item item">
                         <div class="ec-brand-img"><a href="#"><img alt="brand" title="brand"
                                     src="{{asset('Front/assets/images/brand-image/7.png')}}" /></a></div>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

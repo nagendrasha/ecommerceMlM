@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +27,9 @@ Route::group(['as' => 'frontend_'], function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin_'], function () {
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+Route::group(['middleware' => ['auth','admin_auth'], 'prefix' => 'admin', 'as' => 'admin_'], function () {
     include "admin.php";
     include "admin1.php";
     include "admin2.php";
