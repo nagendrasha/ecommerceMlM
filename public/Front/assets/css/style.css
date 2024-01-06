@@ -32398,3 +32398,15 @@ height:45px;
 }
 
 }
+.ec-header-search form.ec-search-group-form{
+  border-radius: 20px !important;
+}
+.header-search .form-control{
+  background-color: #fff !important;
+}
+.header-logo img {
+  width: 80px !important;
+}
+.ec-header-bottom {
+  padding: 15px 0 !important;
+}
