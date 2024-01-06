@@ -152,12 +152,11 @@
             <div class="collapse">
                 <ul class="sub-menu" id="otherpages" data-parent="#sidebar-menu">
                     <li class="has-sub">
-                        <a href="#">Contact Us</a>
+                        <a href="{{route('admin_contactus_list')}}">Contact Us</a>
                     </li>
                     <li class="has-sub">
-                        <a href="#">Newsletter</a>
+                        <a href="{{route('admin_newsletter_list')}}">Newsletter</a>
                     </li>
-
                 </ul>
             </div>
         </li>
@@ -178,6 +177,9 @@
                     </li>
                     <li class="has-sub">
                         <a href="{{route('admin_slider_list')}}">Slider</a>
+                    </li>
+                    <li class="has-sub">
+                        <a href="{{route('admin_service_list')}}">Services</a>
                     </li>
 
                 </ul>

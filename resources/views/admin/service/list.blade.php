@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div>
-                <a href="{{route('admin_slider_create')}}" class="btn btn-primary"> Add {{$nav}}</a>
+                <a href="{{route('admin_service_create')}}" class="btn btn-primary"> Add {{$nav}}</a>
             </div>
         </div>
         <div class="row">
@@ -47,8 +47,8 @@
                                 <thead>
                                     <tr>
                                         <th>Image</th>
+                                        <th>Name</th>
                                         <th>Title</th>
-                                        <th>Link</th>
                                         <th>Sort</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -56,8 +56,8 @@
                                 </thead>
 
                                 <tbody>
-                                    @if($slider->count())
-                                    @foreach($slider as $data)
+                                    @if($services->count())
+                                    @foreach($services as $data)
                                     <tr>
                                         <td>
                                             @if(File::exists($data->image))
@@ -66,13 +66,14 @@
                                             No Image
                                             @endif
                                         </td>
+                                        <td>{{$data->name}}</td>
                                         <td>{{$data->title}}</td>
                                         <td>@if(!empty($data->link)) <i class="mdi mdi-check-circle"></i> @else <i class="mdi mdi-close-circle"></i>  @endif</td>
                                         <td>{{$data->sort}}</td>
                                         <td>{{$data->status ? 'Active' : 'Inactive'}}</td>
                                         <td>
-                                           <a class="success" href="{{route('admin_slider_edit',encrypt($data->id))}}"><i class="fa fa-edit"></i></a>
-                                           <a class="danger" href="{{route('admin_slider_delete',encrypt($data->id))}}"><i class="fa fa-trash"></i></a>
+                                           <a class="success" href="{{route('admin_service_edit',encrypt($data->id))}}"><i class="fa fa-edit"></i></a>
+                                           <a class="danger" href="{{route('admin_service_delete',encrypt($data->id))}}"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach
