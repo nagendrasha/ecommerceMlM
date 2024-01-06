@@ -18,124 +18,35 @@
         </div>
 
         <div class="row">
+            @foreach($users as $user)
             <div class="col-lg-6 col-xl-4 mb-24px">
                 <div class="ec-user-card card card-default p-4">
                     <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
                             class="mdi mdi-eye-plus-outline"></i>
                     </a>
                     <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-1.jpg')}}" class="mr-3 img-fluid"
+                        <img src="{{url('/')}}/{{$user->image}}" class="mr-3 img-fluid"
                             alt="Avatar Image">
 
                         <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
+                            <h5 class="mt-0 mb-2 text-dark">{{ucwords($user->name)}}</h5>
 
                             <ul class="list-unstyled">
                                 <li class="d-flex mb-1">
                                     <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
+                                    <span>{{$user->email}}</span>
                                 </li>
                                 <li class="d-flex mb-1">
                                     <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
+                                    <span>{{$user->phone}}</span>
                                 </li>
                             </ul>
                         </div>
                     </a>
                 </div>
-            </div>
-
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-2.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">John Smith</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-3.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Mike Tison</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-4.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Jack Sparrow</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
+            </div>   
+            @endforeach    
+            
         </div>
 
         <!-- Contact Modal -->
