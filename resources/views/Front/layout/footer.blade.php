@@ -76,13 +76,15 @@
                                     <li class="ec-footer-link">Sign up for our e-mail to get latest news.</li>
                                 </ul>
                                 <div class="ec-subscribe-form">
-                                    <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
-                                        action="#">
+                                    {{-- <form id="ec-newsletter-form" name="ec-newsletter-form" method="post"
+                                        action="#"> --}}
+                                        <form action="{{route('frontend_save_news_letter')}}" method="POST" enctype="multipart/form-data">
+                                            @csrf
                                         <div id="ec_news_signup" class="ec-form">
                                             <input class="ec-email" type="email" required=""
-                                                placeholder="Enter your email" name="ec-email" value="" />
+                                                placeholder="Enter your email" name="email" value="" />
                                             <button id="ec-news-btn" class="button btn-primary" type="submit"
-                                                name="subscribe" value="">subscribe</button>
+                                                >subscribe</button>
                                         </div>
                                     </form>
                                 </div>
@@ -341,9 +343,12 @@
     <div id="ec-popnews-box-content">
         <h1>Subscribe Newsletter</h1>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <form id="ec-popnews-form" action="#" method="post">
-            <input type="email" name="newsemail" placeholder="Email Address" required />
-            <button type="button" class="btn btn-secondary" name="subscribe">Subscribe</button>
+        {{-- <form id="ec-popnews-form" action="#" method="post"> --}}
+            <form action="{{route('frontend_save_news_letter')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+            
+            <input type="email" name="email" placeholder="Email Address" required />
+            <button type="button" class="btn btn-secondary" >Subscribe</button>
         </form>
     </div>
 </div>

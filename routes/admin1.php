@@ -6,6 +6,10 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\FAQController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\TaglineController;
+use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\ServicesController;
+use App\Http\Controllers\Admin\NewslettersController;
+
 
 Route::group(['prefix' => 'user', 'as'=>'user_'], function () {
     Route::get('list', [UserController::class, 'List'])->name('list');
@@ -19,6 +23,26 @@ Route::group(['prefix' => 'slider', 'as'=>'slider_'], function () {
     Route::get('delete/{id}', [SliderController::class, 'Delete'])->name('delete');
 });
 
+Route::group(['prefix' => 'contactus', 'as'=>'contactus_'], function () {
+    Route::get('list', [ContactUsController::class, 'List'])->name('list');
+    Route::any('create', [ContactUsController::class, 'Create'])->name('create');
+    Route::any('edit/{id}', [ContactUsController::class, 'Edit'])->name('edit');
+    Route::get('delete/{id}', [ContactUsController::class, 'Delete'])->name('delete');
+});
+
+Route::group(['prefix' => 'service', 'as'=>'service_'], function () {
+    Route::get('list', [ServicesController::class, 'List'])->name('list');
+    Route::any('create', [ServicesController::class, 'Create'])->name('create');
+    Route::any('edit/{id}', [ServicesController::class, 'Edit'])->name('edit');
+    Route::get('delete/{id}', [ServicesController::class, 'Delete'])->name('delete');
+});
+
+Route::group(['prefix' => 'newsletter', 'as'=>'newsletter_'], function () {
+    Route::get('list', [NewslettersController::class, 'List'])->name('list');
+    Route::any('create', [NewslettersController::class, 'Create'])->name('create');
+    Route::any('edit/{id}', [NewslettersController::class, 'Edit'])->name('edit');
+    Route::get('delete/{id}', [NewslettersController::class, 'Delete'])->name('delete');
+}); 
 
 Route::group(['prefix' => 'blogs', 'as'=>'blogs_'], function () {
     Route::get('list', [BlogController::class, 'List'])->name('list');

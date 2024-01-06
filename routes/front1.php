@@ -10,6 +10,7 @@ use App\Http\Controllers\Front\AuthController;
 use App\Http\Controllers\Front\OfferController;
 use App\Http\Controllers\Front\ProductController;
 use App\Http\Controllers\Front\UserDashboardController;
+use App\Http\Controllers\Front\NewsletterController;
 
 Route::get('/',[IndexController::class,'Index'])->name('index');
 Route::get('/about-us',[AboutUsController::class,'Index'])->name('aboutus');
@@ -24,6 +25,9 @@ Route::get('/special-offer',[OfferController::class,'Offer'])->name('special_off
 Route::get('/our-product',[ProductController::class,'List'])->name('product_list');
 Route::get('/product-detail/{id}',[ProductController::class,'Detail'])->name('product_detail');
 Route::post('save-review',[ProductController::class,'saveReview'])->name('save_review');
+Route::post('save-contact-us',[ContactUsController::class,'savecontactus'])->name('save_contact_us');
+Route::post('save-news-letter',[NewsletterController::class,'savenewsletter'])->name('save_news_letter');
+
 
 
 Route::group(['as'=>'user','prefix'=>'user'],function(){
