@@ -20,7 +20,7 @@ class NewsletterController extends Controller
 
         DB::table('newsletters')->insert($values);
 
-        return redirect()->route('forntend_contactus')->with('success_message', 'Successfully Record Created');
+        return redirect()->route('frontend_index')->with('success_message', 'Successfully Record Created');
     }
     
 }

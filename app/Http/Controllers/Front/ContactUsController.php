@@ -43,6 +43,6 @@ class ContactUsController extends Controller
 
         DB::table('contactuses')->insert($values);
 
-        return redirect()->route('forntend_contactus')->with('success_message', 'Successfully Record Created');
+        return redirect()->route('frontend_contactus')->with('success', 'Successfully Record Created');
     }
 }
