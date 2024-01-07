@@ -17,6 +17,7 @@ Route::get('/about-us',[AboutUsController::class,'Index'])->name('aboutus');
 Route::get('/our-blogs',[BlogUsController::class,'Index'])->name('blogs');
 Route::get('/blog-detail/{slug}',[BlogUsController::class,'Detail'])->name('detail');
 Route::get('/my-cart',[CartController::class,'CartList'])->name('cart_list');
+Route::post('/add-to-cart',[CartController::class,'addToCart'])->name('add_cart');
 Route::get('/checkout',[CartController::class,'Checkout'])->name('checkout');
 Route::get('/my-wishlist',[CartController::class,'Wishlist'])->name('wishlist');
 Route::get('/contact-us',[ContactUsController::class,'Index'])->name('contactus');
