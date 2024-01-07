@@ -18,206 +18,113 @@
         </div>
 
         <div class="row">
+            @if(count($users) > 0)
+            @foreach($users as $user)
             <div class="col-lg-6 col-xl-4 mb-24px">
                 <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
+                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#edituser{{$user->id}}" class="view-detail"><i
                             class="mdi mdi-eye-plus-outline"></i>
                     </a>
+                    
                     <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-1.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
+                        <img src="{{url('/')}}/{{$user->image}}" class="mr-3 img-fluid"
+                            alt="{{ucwords($user->name)}}">
 
                         <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Emma Smith</h5>
+                            <h5 class="mt-0 mb-2 text-dark">{{ucwords($user->name)}}</h5>
 
                             <ul class="list-unstyled">
                                 <li class="d-flex mb-1">
                                     <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
+                                    <span>{{$user->email}}</span>
                                 </li>
                                 <li class="d-flex mb-1">
                                     <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
+                                    <span>{{$user->phone}}</span>
                                 </li>
                             </ul>
                         </div>
                     </a>
                 </div>
             </div>
-
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-2.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">John Smith</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
+            
+            
+            <div class="modal fade modal-contact-detail" id="edituser{{$user->id}}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-end border-bottom-0">
+                            {{-- <button type="button" class="pr-2 btn-edit-icon" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="mdi mdi-pencil"></i>
+                            </button> --}}
+    
+                            <button type="button" class="btn-close-icon" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="mdi mdi-close"></i>
+                            </button>
                         </div>
-                    </a>
+    
+                        <div class="modal-body pt-0">
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                    <div class="profile-content-left px-4">
+                                        <div class="text-center widget-profile px-0 border-0">
+                                            <div class="card-img mx-auto rounded-circle">
+                                                <img src="{{url('/')}}/{{$user->image}}" alt="{{ucwords($user->name)}}">
+                                            </div>
+    
+                                            <div class="card-body">
+                                                <h4 class="py-2 text-dark">{{ucwords($user->name)}}</h4>
+                                                <p>{{$user->email}}</p>
+                                                <a class="d-none btn btn-primary btn-pill my-4" href="#">Follow</a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="d-flex justify-content-between pt-4">
+                                            <div class="text-center pb-4">
+                                                <h6 class="text-dark pb-2">354</h6>
+                                                <p>Bought</p>
+                                            </div>
+    
+                                            <div class="text-center pb-4">
+                                                <h6 class="text-dark pb-2">30</h6>
+                                                <p>Wish List</p>
+                                            </div>
+    
+                                            <div class="text-center pb-4">
+                                                <h6 class="text-dark pb-2">1200</h6>
+                                                <p>Following</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-6">
+                                    <div class="contact-info px-4">
+                                        <h4 class="text-dark mb-1">Contact Details</h4>
+                                        <p class="text-dark font-weight-medium pt-4 mb-2">Email address</p>
+                                        <p>{{$user->email}}</p>
+                                        <p class="text-dark font-weight-medium pt-4 mb-2">Phone Number</p>
+                                        <p>+{{$user->phone}}</p>
+                                        <p class="text-dark font-weight-medium pt-4 mb-2">Address</p>
+                                        <p>{{$user->address ? $user->address : 'No Address Added'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-3.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Mike Tison</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
+            @endforeach 
+            @else 
+            <div class="col-lg-12 col-xl-12 text-center">
+            <h1>No User Found</h1>
             </div>
-
-            <div class="col-lg-6 col-xl-4 mb-24px">
-                <div class="ec-user-card card card-default p-4">
-                    <a href="javascript:0" data-bs-toggle="modal" data-bs-target="#modalContact" class="view-detail"><i
-                            class="mdi mdi-eye-plus-outline"></i>
-                    </a>
-                    <a href="javascript:0" class="media text-secondary">
-                        <img src="{{asset('admin/assets/img/user/u-xl-4.jpg')}}" class="mr-3 img-fluid"
-                            alt="Avatar Image">
-
-                        <div class="media-body">
-                            <h5 class="mt-0 mb-2 text-dark">Jack Sparrow</h5>
-
-                            <ul class="list-unstyled">
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-email mr-1"></i>
-                                    <span>exmaple@email.com</span>
-                                </li>
-
-                                <li class="d-flex mb-1">
-                                    <i class="mdi mdi-phone mr-1"></i>
-                                    <span>(123) 888 777 632</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
+            @endif
+            
         </div>
 
         <!-- Contact Modal -->
-        <div class="modal fade modal-contact-detail" id="modalContact" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header justify-content-end border-bottom-0">
-                        <button type="button" class="btn-edit-icon" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="mdi mdi-pencil"></i>
-                        </button>
-
-                        <div class="dropdown">
-                            <button class="btn-dots-icon" type="button" id="dropdownMenuButton"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-dots-vertical"></i>
-                            </button>
-
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-
-                        <button type="button" class="btn-close-icon" data-bs-dismiss="modal" aria-label="Close">
-                            <i class="mdi mdi-close"></i>
-                        </button>
-                    </div>
-
-                    <div class="modal-body pt-0">
-                        <div class="row no-gutters">
-                            <div class="col-md-6">
-                                <div class="profile-content-left px-4">
-                                    <div class="text-center widget-profile px-0 border-0">
-                                        <div class="card-img mx-auto rounded-circle">
-                                            <img src="{{asset('admin/assets/img/user/u6.jpg')}}" alt="user image">
-                                        </div>
-
-                                        <div class="card-body">
-                                            <h4 class="py-2 text-dark">John Devilo</h4>
-                                            <p>johnexample@gmail.com</p>
-                                            <a class="btn btn-primary btn-pill my-4" href="#">Follow</a>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between ">
-                                        <div class="text-center pb-4">
-                                            <h6 class="text-dark pb-2">354</h6>
-                                            <p>Bought</p>
-                                        </div>
-
-                                        <div class="text-center pb-4">
-                                            <h6 class="text-dark pb-2">30</h6>
-                                            <p>Wish List</p>
-                                        </div>
-
-                                        <div class="text-center pb-4">
-                                            <h6 class="text-dark pb-2">1200</h6>
-                                            <p>Following</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="contact-info px-4">
-                                    <h4 class="text-dark mb-1">Contact Details</h4>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2">Email address</p>
-                                    <p>johnexample@gmail.com</p>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2">Phone Number</p>
-                                    <p>+00 9539 2641 31</p>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2">Birthday</p>
-                                    <p>Dec 10, 1991</p>
-                                    <p class="text-dark font-weight-medium pt-4 mb-2">Address</p>
-                                    <p>123/2, Kings fort street-2, Polo alto, US.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- Add Contact Button  -->
         <div class="modal fade modal-add-contact" id="modal-add-contact" tabindex="-1" role="dialog" aria-hidden="true">

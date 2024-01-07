@@ -20,7 +20,6 @@ class CreateNewslettersTable extends Migration
             $table->tinyInteger('deleted')->default(0)->comment('0 = not deleted , 1 = deleted');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
-        
         });
     }
 
