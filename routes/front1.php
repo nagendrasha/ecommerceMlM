@@ -30,12 +30,12 @@ Route::post('save-news-letter',[NewsletterController::class,'savenewsletter'])->
 
 
 
-Route::group(['as'=>'user','prefix'=>'user'],function(){
+Route::group(['as'=>'user_','prefix'=>'user'],function(){
     Route::get('/dashboard',[UserDashboardController::class,'Dashboard'])->name('dashboard');
 });
 
 
-Route::group(['prefix'=>'user','as'=>'user_'],function(){
-    Route::get('/login',[AuthController::class,'LoginPage'])->name('login_page');
-    Route::get('/register',[AuthController::class,'RegisterPage'])->name('register_page');
-});
+// Route::group(['prefix'=>'user','as'=>'user_'],function(){
+//     Route::get('/login',[AuthController::class,'LoginPage'])->name('login_page');
+//     Route::get('/register',[AuthController::class,'RegisterPage'])->name('register_page');
+// });
