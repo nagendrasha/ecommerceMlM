@@ -10,13 +10,30 @@
                     <span><i class="mdi mdi-chevron-right"></i></span>User
                 </p>
             </div>
+            <div class="align-self-center ec-header-search">
+                            <div class="header-search">
+                                <form class="ec-search-group-form" action="#">
+                                    <div class="ec-search-select-inner">
+                                        <div class="ec-search-cat-title">All <i class="fa-solid fa-chevron-down"></i></div>
+                                        <ul class="ec-search-cat-block">
+                                            <li><a href="#">All User</a></li>
+                                            <li><a href="#">Delete User</a></li>
+                                            <li><a href="#">Inactive User</a></li>
+                                            <li><a href="#">Active User</a></li>
+                                        </ul>
+                                    </div>
+                                    <input class="form-control" placeholder="Search Here..." type="text">
+                                    <button class="search_submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </form>
+                            </div>
+                        </div>
             <div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                     data-bs-target="#modal-add-contact"> Add {{$nav}}
                 </button>
             </div>
         </div>
-
+                 
         <div class="row">
             @if(count($users) > 0)
             @foreach($users as $user)

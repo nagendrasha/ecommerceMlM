@@ -346,3 +346,9 @@ $(document).ready(function () {
 	document.getElementById("ec-year").innerHTML = year;
 
 });
+
+$(document).ready(function(){
+  $(".ec-search-select-inner").click(function(){
+    $(".ec-search-cat-block").slideDown();
+  });
+});
