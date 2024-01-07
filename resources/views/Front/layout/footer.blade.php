@@ -750,7 +750,7 @@ document.getElementById("defaultOpen").click();
   autoplaySpeed: 4000,
 });
 </script>
-
+@stack('scripts')
 </body>
 
 

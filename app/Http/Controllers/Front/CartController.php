@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Cart;
 
 class CartController extends Controller
 {
@@ -22,5 +23,9 @@ class CartController extends Controller
     public function Wishlist(){
 
         return view('Front.wishlist');
+    }
+
+    public function addToCart(Request $request) {
+        dd($request->all());
     }
 }
