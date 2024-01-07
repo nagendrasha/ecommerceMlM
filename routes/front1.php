@@ -30,7 +30,7 @@ Route::post('save-news-letter',[NewsletterController::class,'savenewsletter'])->
 
 
 
-Route::group(['as'=>'user_','prefix'=>'user'],function(){
+Route::group(['as'=>'user_','prefix'=>'user','middleware'=>'auth'],function(){
     Route::get('/dashboard',[UserDashboardController::class,'Dashboard'])->name('dashboard');
 });
 

@@ -9,12 +9,12 @@
             <div class="col-12">
                 <div class="row ec_breadcrumb_inner">
                     <div class="col-md-6 col-sm-12">
-                        <h2 class="ec-breadcrumb-title">User Profile</h2>
+                        <h2 class="ec-breadcrumb-title">{{ucwords(Auth::User()->name)}}'s Profile</h2>
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <!-- ec-breadcrumb-list start -->
                         <ul class="ec-breadcrumb-list">
-                            <li class="ec-breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="ec-breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
                             <li class="ec-breadcrumb-item active">Profile</li>
                         </ul>
                         <!-- ec-breadcrumb-list end -->
@@ -67,9 +67,9 @@
                                         </div>
                                         <div class="ec-vendor-block-detail">
                                             
-                                            <img class="v-img" src="{{asset('Front/assets/images/user/1.jpg')}}" alt="vendor image">
-                                            <h5 class="name">Mariana Johns</h5>
-                                            <p>( Business Man )</p>
+                                            <img class="v-img" src="{{url('/')}}/{{$myDetail->image}}" alt="vendor image">
+                                            <h5 class="name">{{ucwords(Auth::User()->name)}}</h5>
+                                            <p>( {{Auth::User()->email}} )</p>
                                         </div>
                                         <p>Hello <span>Mariana Johns!</span></p>
                                         <p>From your account you can easily view and track orders. You can manage and change your account information like address, contact information and history of orders.</p>

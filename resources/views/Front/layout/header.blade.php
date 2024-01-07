@@ -216,10 +216,13 @@
                                     <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                                     @elseif(Auth::check() && Auth::User()->role == 1)
                                     <li><a class="dropdown-item" href="{{route('admin_dashboard')}}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                                     @elseif(Auth::check() && Auth::User()->role == 2)
                                     <li><a class="dropdown-item" href="{{route('frontend_user_dashboard')}}">My Profile</a></li>
                                     <li><a class="dropdown-item" href="#">My Orders</a></li>
-                                    <li><a class="dropdown-item" href="{{route('frontend_wishlist')}}">My Wishlist</a></li>
+                                    <li><a class="dropdown-item" href="{{route('frontend_wishlist')}}">My Wishlist (4)</a></li>
+                                    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                    
                                     @endif
                                 </ul>
 
