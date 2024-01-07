@@ -22,6 +22,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <!-- css All Plugins Files -->
    <link rel="stylesheet" href="{{asset('Front/assets/css/plugins/animate.css')}}" />
    <link rel="stylesheet" href="{{asset('Front/assets/css/plugins/swiper-bundle.min.css')}}" />
@@ -58,7 +59,7 @@
        <!--Ec Header Top Start -->
                     <div class="container-fluid tt">
                     <div class="row">
-                            <div class="col header-top-center d-md-none d-block">
+                    <div class="col header-top-center d-md-none d-block">
                        <!-- Language Start -->
                        <section id="aviso-urgente" class="aviso-urgente js-aviso-urgente ">
                             <div class="aviso-urgente-interno">
@@ -82,25 +83,13 @@
                    </div>
             </div>
                     </div>
-       <div class="header-top">
+       <div class="header-top d-md-none d-block">
                     
            <div class="container">
             
                <div class="row align-items-center tb">
                     
-                   <!-- Header Top phone Start -->
-                   <div class="col header-top-left">
-                       <!-- Social Start -->
-                       <div class="header-top-social">
-                           <ul class="mb-0">
-                               <li class="list-inline-item"><a href="#"><i class="ecicon eci-facebook"></i></a></li>
-                               <li class="list-inline-item"><a href="#"><i class="ecicon eci-instagram"></i></a></li>
-                               <li class="list-inline-item"><a href="#"><i class="ecicon eci-linkedin"></i></a></li>
-                               <li class="list-inline-item"><a href="#"><i class="ecicon eci-twitter"></i></a></li>
-                           </ul>
-                       </div>
-                       <!-- Social End -->
-                   </div>
+                   
                    <!-- Header Top phone End -->
                    <!-- Header Top call Start -->
                    
@@ -148,32 +137,7 @@
 
                    </div>
                    <!-- Header Top call End -->
-                   <!-- Header Top Language Currency -->
-                   <div class="col header-top-right d-none d-lg-block">
-                       <div class="header-top-right-inner d-flex justify-content-end">
-
-                           <!-- Header User Start -->
-                           <div class="ec-header-user dropdown">
-                               
-                                
-                                    <a href="{{route('frontend_user_login_page')}}">
-                                        <i class="fi-rr-user"></i><span
-                                       class="ec-btn-title">Login</span>
-                                    </a>
-                         
-                               </ul>
-                           </div>
-                           <!-- Header User End -->
-                           <!-- Header wishlist Start -->
-                           <div class="ec-header-wishlist">
-                               <a href="{{route('frontend_wishlist')}}">
-                                   <div class="top-icon"><i class="fi-rr-heart"></i></div>
-                                   <span class="ec-btn-title">wishlist</span>
-                               </a>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- Header Top Language Currency -->
+                  
                    <!-- Header Top responsive Action -->
                    <div class="col header-top-res d-lg-none">
                        <div class="ec-header-bottons">
@@ -230,14 +194,7 @@
                        <div class="align-self-center ec-header-search">
                            <div class="header-search">
                                <form class="ec-search-group-form" action="#">
-                                   <div class="ec-search-select-inner">
-                                       <div class="ec-search-cat-title">All</div>
-                                       <ul class="ec-search-cat-block">
-                                           <li><a href="#">Cloths</a></li>
-                                           <li><a href="#">Bag</a></li>
-                                           <li><a href="#">Shoes</a></li>
-                                       </ul>
-                                   </div>
+                                   
                                    <input class="form-control" placeholder="Search Here..." type="text">
                                    <button class="search_submit" type="submit"><i class="ecicon eci-search"></i></button>
                                </form>
@@ -247,13 +204,23 @@
 
                        <!-- Ec Header Button Start -->
                        <div class="align-self-center ec-header-bottons">
+                                
                            <div class="ec-header-bottons">
-
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Login
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                                    <li><a class="dropdown-item" href="#">My Account</a></li>
+                                    <li><a class="dropdown-item" href="#">My Orders</a></li>
+                                </ul>
+                            </div>
                                <!-- Header wishlist End -->
                                <!-- Header Cart Start -->
                                <a href="#ec-side-cart" class="ec-header-btn ec-side-toggle">
-                                   <div class="header-icon"><i class="fi-rr-shopping-basket"></i></div>
-                                   <span class="ec-btn-title"><span class="ec-cart-count">3</span> item(s) - $350.00</span>
+                                   <div class="header-icon"><i class="fa-solid fa-cart-plus"></i></div>
+                                   <span class="ec-btn-title"><span class="ec-cart-count">3</span> item(s)</span>
 
                                </a>
                                <!-- Header Cart End -->

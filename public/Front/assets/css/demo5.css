@@ -14438,7 +14438,6 @@ li {
   font-size: 16px;
   font-family: "Poppins, sans-serif";
   letter-spacing: 0;
-  padding-top: 4px;
   font-weight: 500;
 }
 
@@ -20841,3 +20840,10 @@ section.ec-instagram-section {
 #ec-testimonial-slider .slick-list{
   padding-top: 80px !important;
 }
+#dropdownMenuButton1{
+    font-size: 16px;
+    font-family: "Poppins, sans-serif";
+    letter-spacing: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
