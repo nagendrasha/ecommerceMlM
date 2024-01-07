@@ -36,6 +36,11 @@
 
    <link rel="stylesheet" href="{{asset('Front/assets/css/responsive.css')}}" />
    <link rel="stylesheet" href="{{asset('Front/assets/css/demo5.css')}}" />
+   <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 
    @stack('extra_links')
    <style>
@@ -145,9 +150,9 @@
                            <div class="ec-header-user dropdown">
                                <button class="dropdown-toggle" data-bs-toggle="dropdown"><i class="fi-rr-user"></i></button>
                                <ul class="dropdown-menu dropdown-menu-right">
-                                   <li><a class="dropdown-item" href="{{route('frontend_user_register_page')}}">Register</a></li>
+                                   <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                                    <li><a class="dropdown-item" href="{{route('frontend_checkout')}}">Checkout</a></li>
-                                   <li><a class="dropdown-item" href="{{route('frontend_user_login_page')}}">Login</a></li>
+                                   <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                                </ul>
                            </div>
                            <!-- Header User End -->
@@ -208,13 +213,25 @@
                            <div class="ec-header-bottons">
                             <div class="dropdown">
                                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Login
+                                   @if(!Auth::check()) Login @else {{ucwords(Auth::User()->name)}} @endif
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">Wishlist</a></li>
-                                    <li><a class="dropdown-item" href="#">My Account</a></li>
+                                    @if(!Auth::check())
+                                    <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
+                                    <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
+                                    @elseif(Auth::check() && Auth::User()->role == 1)
+                                    <li><a class="dropdown-item" href="{{route('admin_dashboard')}}">Dashboard</a></li>
+                                    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                    @elseif(Auth::check() && Auth::User()->role == 2)
+                                    <li><a class="dropdown-item" href="{{route('frontend_user_dashboard')}}">My Profile</a></li>
                                     <li><a class="dropdown-item" href="#">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{{route('frontend_wishlist')}}">My Wishlist (4)</a></li>
+                                    <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                    
+                                    @endif
                                 </ul>
+
+                            
                             </div>
                                <!-- Header wishlist End -->
                                <!-- Header Cart Start -->

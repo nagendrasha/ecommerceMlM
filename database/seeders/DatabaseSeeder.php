@@ -12,13 +12,14 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   
-        
+    {           
         $this->call(AdminDefaultCredentialsSeeder::class);
         $this->call(CountriesTableSeeder::class);
         $this->call(StatesTableSeeder::class);
         $this->call(CitiesTableSeeder::class);
-   
+        $this->call(SliderSeeder::class);
+        $this->call(TaglineSeederClass::class);
+        $this->call(FAQSeederClass::class);
 
     }
 }

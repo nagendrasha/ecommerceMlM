@@ -208,7 +208,7 @@
                                             <button class="btn btn-primary change">Buy Now</button>
                                         </div>
                                         <div class="ec-single-cart ">
-                                            <button class="btn btn-primary change">Add To Cart</button>
+                                            <button class="btn btn-primary change" onClick="addToCart()">Add To Cart</button>
                                         </div>
                                         <div class="ec-single-wishlist">
                                             <a class="ec-btn-group wishlist" title="Wishlist"><i
@@ -337,7 +337,7 @@
                                 <div class="ec-ratting-form">
                                     <form class="form-group" action="{{route('frontend_save_review')}}" method="POST">
                                         @csrf
-                                        <input type="hidden" class="form-control" name="product_id"
+                                        <input type="hidden" class="form-control" name="product_id" id="product_id"
                                             value="{{encrypt($product->id)}}">
                                         <div class="ec-ratting-star mb-4">
                                             <span>*Your rating:</span>
@@ -707,3 +707,34 @@
 
 
 @endsection
+
+@push('scripts')
+
+<script>
+    function addToCart() {
+        var qty = $('.qty-input').val();
+        var p_id = $('#product_id').val();
+        $.ajax({
+            url: "{{route('frontend_add_cart')}}",
+            data: {
+                qty: qty,
+                p_id: p_id,
+                _token: window.Laravel.csrfToken
+            },
+            type: 'post',
+            success: function(data) {
+                $('#option_id').val(data.id);
+                $('#name').val(data.name);
+                $('#sort_order').val(data.sort_order);
+                $('#modal-add-contact').modal('show');
+            },
+
+            // Error handling 
+            error: function(error) {
+                console.log(`Error ${error}`);
+            }
+        });
+    }
+</script>
+
+@endpush
