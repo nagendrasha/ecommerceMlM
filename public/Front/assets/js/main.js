@@ -1,3 +1,4 @@
+
 /**
     Item Name: Ekka - Ecommerce HTML Template.
     Author: ashishmaraviya
@@ -933,16 +934,42 @@ function ecCheckCookie()
     });
 
     /*----------------------------- Testimonial Slider -------------------------------- */    
-    $('#ec-testimonial-slider').slick({
-        rows: 1,
-        dots: true,
-        arrows: false,
-        centerMode: true,
-        infinite: false,
-        speed: 500,
-        centerPadding: 0,
-        slidesToShow: 1,
-        slidesToScroll: 1
+    $(document).ready(function() {
+        $('#ec-testimonial-slider').slick({
+            centerMode: true,
+            dots: true,
+            arrows: false,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            centerPadding: '0',
+            responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+        });
     });
 
     $("#ec-testimonial-slider").find(".slick-slide").each(function(i){

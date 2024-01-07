@@ -654,25 +654,6 @@ document.getElementById("defaultOpen").click();
   ]
 });
 </script>
-<!-- <script>
-    $('#ec-testimonial-slider').slick({
-  slidesToShow: 3,
-  slidesToScroll: 2,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    },
-  ]
-});
-</script> -->
 <script>    
     $('#ec-brand-slider').slick({
   slidesToShow: 6,

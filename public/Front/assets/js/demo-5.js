@@ -740,28 +740,6 @@ function ecCheckCookie()
         });
     });
 
-    /*----------------------------- Testimonial Slider -------------------------------- */    
-    $(document).ready(function() {
-        $('#ec-testimonial-slider').slick({
-            centerMode: true,
-            dots: true,
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            centerPadding: '0',
-            responsive: [
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        });
-    });
-
     /*----------------------------- Footer Toggle -------------------------------- */    
     $(document).ready(function(){
         $("footer .footer-top .ec-footer-widget .ec-footer-links").addClass("ec-footer-dropdown");

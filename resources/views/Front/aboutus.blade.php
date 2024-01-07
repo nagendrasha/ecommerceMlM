@@ -154,10 +154,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="ec-test-outer">
-                    <ul id="ec-testimonial-slider" class="slick-initialized slick-slider slick-dotted"><div class="slick-list draggable" style="padding: 0px;"><div class="slick-track" style="opacity: 1; width: 5604px; transform: translate3d(-1868px, 0px, 0px);"><div class="slick-slide slick-cloned" data-slick-index="-4" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
+            <div class="ec-test-outer">
+                    <ul id="ec-testimonial-slider">
+                        <li class="ec-test-item">
                             <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="assets/images/testimonial/1.jpg" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>
@@ -173,9 +175,11 @@
 
                                 </div>
                             </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
+                        </li>
+                        <li class="ec-test-item">
                             <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/2.jpg"></div>
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="assets/images/testimonial/2.jpg" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>
@@ -191,9 +195,11 @@
 
                                 </div>
                             </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
+                        </li>
+                        <li class="ec-test-item">
                             <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/3.jpg"></div>
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="assets/images/testimonial/3.jpg" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>
@@ -209,9 +215,11 @@
 
                                 </div>
                             </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
+                        </li>
+                        <li class="ec-test-item">
                             <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="assets/images/testimonial/1.jpg" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>
@@ -227,151 +235,8 @@
 
                                 </div>
                             </div>
-                        </li></div></div><div class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" role="tabpanel" id="slick-slide100" tabindex="-1" aria-describedby="slick-slide-control100" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-current slick-active slick-center" data-slick-index="1" aria-hidden="false" role="tabpanel" id="slick-slide101" aria-describedby="slick-slide-control101" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/2.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" role="tabpanel" id="slick-slide102" aria-describedby="slick-slide-control102" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/3.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" role="tabpanel" id="slick-slide103" aria-describedby="slick-slide-control103" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/2.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/3.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div><div class="slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" tabindex="-1" style="width: 467px;"><div><li class="ec-test-item" style="width: 100%; display: inline-block;">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial" src="assets/images/testimonial/1.jpg"></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li></div></div></div></div><ul class="slick-dots" style="" role="tablist"><li class="" role="presentation"><button type="button" role="tab" id="slick-slide-control100" aria-controls="slick-slide100" aria-label="1 of 2" tabindex="-1">1</button></li><li role="presentation" class="slick-active"><button type="button" role="tab" id="slick-slide-control101" aria-controls="slick-slide101" aria-label="2 of 2" tabindex="0" aria-selected="true">2</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control102" aria-controls="slick-slide102" aria-label="3 of 2" tabindex="-1">3</button></li><li role="presentation"><button type="button" role="tab" id="slick-slide-control103" aria-controls="slick-slide103" aria-label="4 of 2" tabindex="-1">4</button></li></ul></ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
