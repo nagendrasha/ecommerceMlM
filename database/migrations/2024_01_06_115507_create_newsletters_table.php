@@ -18,7 +18,6 @@ class CreateNewslettersTable extends Migration
             $table->string('email')->nullable();
             $table->tinyInteger('status')->default(1)->comment('0 = Inactive , 1 = Active');
             $table->tinyInteger('deleted')->default(0)->comment('0 = not deleted , 1 = deleted');
-            $table->softDeletes();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         
