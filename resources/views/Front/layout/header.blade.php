@@ -16,7 +16,7 @@
    <link rel="icon" href="{{asset('Front/assets/images/logo/logo.png')}}" sizes="32x32" />
    <link rel="apple-touch-icon" href="{{asset('Front/assets/images/favicon/favicon-5.png')}}" />
    <meta name="msapplication-TileImage" content="{{asset('Front/assets/images/favicon/favicon-5.png')}}" />
-
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    <!-- css Icon Font -->
    <link rel="stylesheet" href="{{asset('Front/assets/css/vendor/ecicons.min.css')}}" />
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>

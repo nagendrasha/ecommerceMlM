@@ -1923,12 +1923,12 @@
             <div class="ec_ser_content ec_ser_content_1 item ">
                 <div class="ec_ser_inner">
                     <div class="ec-service-image">
-                        @if(File::exists($service->image))
+                        {{-- @if(File::exists($service->image))
                         <img src="{{url('/')}}/{{$service->image}}" width="20px" alt="{{$service->name}}">
                         @else
                         No Image
-                        @endif
-                        {{-- <i class="fi fi-ts-truck-moving"></i> --}}
+                        @endif --}}
+                        <i class="{{$service->icon}}"></i>
                     </div>
                     <div class="ec-service-desc">
                         <h2>{{$service->name}}</h2>
