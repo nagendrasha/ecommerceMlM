@@ -80,6 +80,7 @@
                                         action="#"> --}}
                                         <form action="{{route('frontend_save_news_letter')}}" method="POST" enctype="multipart/form-data">
                                             @csrf
+                                            {{-- <input type="hidden" name="recaptcha"> --}}
                                         <div id="ec_news_signup" class="ec-form">
                                             <input class="ec-email" type="email" required=""
                                                 placeholder="Enter your email" name="email" value="" />

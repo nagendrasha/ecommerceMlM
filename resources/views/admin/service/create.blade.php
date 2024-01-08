@@ -83,7 +83,7 @@
                                             </div>
 
                                             <div class="col-md-4">
-                                                <label for="name" class="form-label">Icon </label>
+                                                <label for="name" class="form-label"><a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer">Icon</a></label>
                                                 <input type="text" class="form-control" id="icon" name="icon" 
                                                 value="{{old('icon')}}" placeholder="icon" >
                                                

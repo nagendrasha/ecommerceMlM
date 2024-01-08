@@ -47,6 +47,13 @@
        .slick-arrow:before{
            color:#fff;
        }
+
+       .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 30%;
+        }
    </style>
 </head>
 <body>

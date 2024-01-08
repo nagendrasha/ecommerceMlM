@@ -81,7 +81,7 @@
                                                 </div>
 
                                                 <div class="col-md-4">
-                                                    <label for="icon" class="form-label">Icon  (<i class="{{ $service->icon }}" aria-hidden="true"></i>) </label>
+                                                    <label for="icon" class="form-label"><a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer">Icon</a>  (<i class="{{ $service->icon }}" aria-hidden="true"></i>) </label>
                                                    
                                                     
                                                     <input type="text"

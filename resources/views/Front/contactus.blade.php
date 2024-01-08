@@ -127,6 +127,8 @@
                                 @endif
                                 <form action="{{route('frontend_save_contact_us')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    <input type="hidden" name="recaptcha">
+
                                     <span class="ec-contact-wrap">
                                         <label>First Name*</label>
                                         <input type="text"

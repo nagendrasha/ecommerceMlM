@@ -12,6 +12,7 @@ class NewsletterController extends Controller
 
     public function savenewsletter(Request $request)
     {
+       
         $values = $request->all();
         
         if ($request->_token) {
@@ -25,7 +26,7 @@ class NewsletterController extends Controller
     
     public function newsletterthankyou(Request $request)
     {
-        return view('Front.news_letter_thank_you');
+        return view('Front.thank_you');
     }
     
 }
