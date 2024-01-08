@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\TaglineController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\ServicesController;
 use App\Http\Controllers\Admin\NewslettersController;
+use App\Http\Controllers\Admin\PageController;
 
 
 Route::group(['prefix' => 'user', 'as'=>'user_'], function () {
@@ -70,4 +71,11 @@ Route::group(['prefix' => 'tagline', 'as'=>'tagline_'], function () {
     Route::any('create', [TaglineController::class, 'Create'])->name('create');
     Route::any('edit/{id}', [TaglineController::class, 'Edit'])->name('edit');
     Route::get('delete/{id}', [TaglineController::class, 'Delete'])->name('delete');
+});
+
+Route::group(['prefix' => 'pages', 'as'=>'pages_'], function () {
+    Route::get('list', [PageController::class, 'List'])->name('list');
+    Route::any('create', [PageController::class, 'Create'])->name('create');
+    Route::any('edit/{id}', [PageController::class, 'Edit'])->name('edit');
+    Route::get('delete/{id}', [PageController::class, 'Delete'])->name('delete');
 });
