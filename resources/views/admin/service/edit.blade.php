@@ -27,7 +27,7 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row ec-vendor-uploads">
-                                    <div class="col-lg-4">
+                                    {{-- <div class="col-lg-4">
                                         <div class="ec-vendor-img-upload">
                                             <div class="ec-vendor-main-img">
                                                 <div class="avatar-upload">
@@ -55,18 +55,18 @@
 
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-8">
+                                    </div> --}}
+                                    <div class="col-lg-12">
                                         <div class="ec-vendor-upload-detail">
                                             <div class="row form-c g-3">
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <label for="name" class="form-label">Name </label>
                                                     <input type="text"
                                                         class="form-control @error('name') is-invalid @enderror"
                                                         id="name" name="name" value="{{ $service->name }}">
-
                                                 </div>
-                                                <div class="col-md-6">
+
+                                                <div class="col-md-4">
                                                     <label for="name" class="form-label">Title <span
                                                             style="color:red">*</span></label>
                                                     <input type="text"
@@ -78,6 +78,16 @@
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                     @enderror
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label for="icon" class="form-label"><a href="https://fontawesome.com/icons" target="_blank" rel="noopener noreferrer">Icon</a>  (<i class="{{ $service->icon }}" aria-hidden="true"></i>) </label>
+                                                   
+                                                    
+                                                    <input type="text"
+                                                        class="form-control @error('icon') is-invalid @enderror"
+                                                        id="icon" name="icon" value="{{ $service->icon }}">
+                                                        
                                                 </div>
                                                 
                                                 <div class="col-md-6">

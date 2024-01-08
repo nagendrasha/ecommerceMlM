@@ -15,6 +15,10 @@ class ContactUsController extends Controller
 
     public function savecontactus(Request $request)
     {
+
+        if($request->recaptcha){
+            dd('Something want worng');
+        }
         $validated = $request->validate([
             'first_name' => 'required|min:3|max:255',
             'last_name' => 'required|min:5|max:255',
@@ -43,6 +47,11 @@ class ContactUsController extends Controller
 
         DB::table('contactuses')->insert($values);
 
-        return redirect()->route('frontend_contactus')->with('success', 'Successfully Record Created');
+        return redirect()->route('frontend_contactus_thankyou')->with('success', 'Successfully Record Created');
+    }
+
+    public function contactusthankyou(Request $request)
+    {
+        return view('Front.thank_you');
     }
 }

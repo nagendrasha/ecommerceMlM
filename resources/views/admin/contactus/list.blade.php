@@ -46,6 +46,7 @@
                             <table id="responsive-data-table" class="table" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>Sr. no</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Contact No</th>
@@ -56,8 +57,11 @@
 
                                 <tbody>
                                     @if($contactuses->count())
+                                    <?php $i= 0;?>
                                     @foreach($contactuses as $data)
+                                    <?php $i++;?>
                                     <tr>
+                                        <td>{{$i}}</td>
                                         
                                         <td>{{$data->first_name}} {{$data->last_name}}</td>
                                         <td>{{$data->email_id}}</td>

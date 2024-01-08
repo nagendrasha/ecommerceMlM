@@ -46,29 +46,25 @@
                             <table id="responsive-data-table" class="table" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
+                                        <th>Sr. No</th>
+                                        <th>Icon</th>
                                         <th>Name</th>
                                         <th>Title</th>
                                         <th>Sort</th>
-                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
                                 <tbody>
+                                    <?php $i = 0;?>
                                     @if($services->count())
                                     @foreach($services as $data)
+                                    <?php $i++;?>
                                     <tr>
-                                        <td>
-                                            @if(File::exists($data->image))
-                                            <img src="{{url('/')}}/{{$data->image}}" width="50px" alt="{{$data->name}}">
-                                            @else
-                                            No Image
-                                            @endif
-                                        </td>
+                                        <td>{{$i;}}</td>
+                                        <td><i class="{{$data->icon}}" aria-hidden="true"></i></td>
                                         <td>{{$data->name}}</td>
                                         <td>{{$data->title}}</td>
-                                        <td>@if(!empty($data->link)) <i class="mdi mdi-check-circle"></i> @else <i class="mdi mdi-close-circle"></i>  @endif</td>
                                         <td>{{$data->sort}}</td>
                                         <td>{{$data->status ? 'Active' : 'Inactive'}}</td>
                                         <td>

@@ -28,6 +28,8 @@ Route::get('/product-detail/{id}',[ProductController::class,'Detail'])->name('pr
 Route::post('save-review',[ProductController::class,'saveReview'])->name('save_review');
 Route::post('save-contact-us',[ContactUsController::class,'savecontactus'])->name('save_contact_us');
 Route::post('save-news-letter',[NewsletterController::class,'savenewsletter'])->name('save_news_letter');
+Route::get('thankyou-newsletter',[NewsletterController::class,'newsletterthankyou'])->name('newsletter_thankyou');
+Route::get('thankyou-contact-us',[ContactUsController::class,'contactusthankyou'])->name('contactus_thankyou');
 
 
 
