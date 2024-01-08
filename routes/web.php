@@ -29,6 +29,8 @@ Route::group(['as' => 'frontend_'], function () {
 Auth::routes();
 
 Route::get('/otp-login',[LoginOTPController::class,'OTPLoginPage'])->name('otp_login_page');
+Route::post('/otp-login',[LoginOTPController::class,'OTPLoginSendOTP'])->name('send_otp');
+Route::post('/otp-verify',[LoginOTPController::class,'OTPVerify'])->name('verify_otp');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::group(['middleware' => ['auth','admin_auth'], 'prefix' => 'admin', 'as' => 'admin_'], function () {

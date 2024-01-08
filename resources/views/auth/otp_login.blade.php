@@ -93,6 +93,19 @@
 .no-cssanimations .cb-slideshow li span {
 	opacity: 1;
 }
+
+#otp-box-value {
+  padding-left: 15px;
+  letter-spacing: 42px;
+  border: 0;
+  background-image: linear-gradient(to left, black 70%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 50px 1px;
+  background-repeat: repeat-x;
+  background-position-x: 35px;
+  width: 220px;
+  outline : none;
+}
 </style>
 <ul class="slideshow">
 	<li><span></span></li>
@@ -103,7 +116,7 @@
 </ul>
 <div class="container d-flex align-items-center justify-content-center form-height-login pt-24px pb-24px">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-10">
+        <div class="col-lg-12 col-md-10">
             <div class="card">
                 <div class="card-header bg-primary">
                     <div class="ec-brand">
@@ -113,32 +126,32 @@
                     </div>
                 </div>
                 <div class="card-body p-5">
-                    <h4 class="text-dark mb-5">Sign In With OTP</h4>
+                    <h4 class="text-dark mb-5">Sign In With OTP <p id="otp-number"></p></h4>
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form onsubmit="return SendOTP()">
                         @csrf
                         <div class="row">
-                            <div class="form-group col-md-12 mb-4">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                                    placeholder="Email">
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                            
+                            <div class="form-group col-md-12 mb-4 text-center">
+                                <input id="otp-box-value" type="text" maxlength="4" />
+                                
                             </div>
 
-                           
+                            <div class="form-group col-md-12 ">
+                              
+
+                                <input id="phone" type="number"
+                                    class="form-control" name="phone"
+                                    required autocomplete="current-phone" placeholder="Phone">
+                                                              
+                            </div>
 
                             <div class="col-md-12">
                                 <div class="d-flex my-2 justify-content-between">
                                     
 
-                                    @if (Route::has('password.request'))
                                     <p><a class="text-blue" href="{{ route('login') }}">Login With Email?</a></p>
-                                    @endif
+                                   
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-block mb-4">Send OTP</button>

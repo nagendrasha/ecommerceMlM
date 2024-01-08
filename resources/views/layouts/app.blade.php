@@ -26,6 +26,8 @@
 
     <!-- Ekka CSS -->
     <link id="ekka-css" rel="stylesheet" href="{{asset('admin/assets/css/ekka.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('toastr/toastr.css') }}">
 
     <!-- FAVICON -->
     <link href="{{asset('admin/assets/img/favicon.png')}}" rel="shortcut icon" />
@@ -42,6 +44,81 @@
 
     <!-- Ekka Custom -->
     <script src="{{asset('admin/assets/js/ekka.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="{{asset('toastr/toastr.js')}}"></script>
+    <script>
+        toastr.options.closeHtml = '<button class="closebtn"><i class="bi bi-x"></i></button>';        
+    </script>
+
+    <script>
+        function SendOTP(){
+            // toastr.success("Success", 'Success');	
+            var phone = $('form').serializeArray()[1].value;
+              
+            if(phone.length != 10){
+                toastr.error("Enter Valid Phone Number", 'Invalid');	
+                return false;
+            }
+
+
+        $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+        type: "POST",
+        url: "{{route('send_otp')}}",
+        data: { phone:phone }, 
+        success: function( data ) {
+        if(data.status == 200 /*OK*/){
+            $("#otp-number").html(data.response);
+            toastr.success(data.message, 'OTP Sent');	
+        }else if(data.status == 404 /*Not Found*/){
+            toastr.info(data.message, 'Phone Number Not Found');	
+        }
+        else{
+            toastr.error("Something went wrong!", 'Error');	
+        }
+        },
+        error: function(){
+            toastr.error("Something went wrong!", 'Error');	
+        }
+    });
+
+            return false;
+        }
+
+
+       $("#otp-box-value").on("keyup",function(){
+        var otpValue = $(this).val();
+         
+        if(otpValue.length == 4){
+            $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+        type: "POST",
+        url: "{{route('verify_otp')}}",
+        data: { otp:otpValue }, 
+        success: function( data ) {
+            if(data.status == 200 /*OK*/){
+            $("#otp-number").html("");
+            toastr.success(data.message, 'Success');	
+        }else if(data.status == 401 /*Unauthorised*/){
+            toastr.info(data.message, 'Error..');	
+        }
+        else{
+            toastr.error("Something went wrong!", 'Error');	
+        }
+        },
+        error: function(){
+            toastr.error("Something went wrong!", 'Error');	
+        }
+    }); 
+        }
+
+       })
+    </script>
 </body>
 
 <!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-v36/ekka-admin/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Dec 2023 17:51:55 GMT -->
