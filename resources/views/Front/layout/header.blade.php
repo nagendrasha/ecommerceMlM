@@ -212,10 +212,10 @@
                                 
                            <div class="ec-header-bottons">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class=" dropdown-toggle" type="button" id="dropdownMenuButton1">
                                    @if(!Auth::check()) Login @else {{ucwords(Auth::User()->name)}} @endif
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menus">
                                     @if(!Auth::check())
                                     <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                                     <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>

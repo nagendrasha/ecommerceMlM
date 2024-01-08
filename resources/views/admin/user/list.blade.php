@@ -14,13 +14,15 @@
                             <div class="header-search">
                                 <form class="ec-search-group-form" action="#">
                                     <div class="ec-search-select-inner">
-                                        <div class="ec-search-cat-title">All <i class="fa-solid fa-chevron-down"></i></div>
-                                        <ul class="ec-search-cat-block">
-                                            <li><a href="#">All User</a></li>
-                                            <li><a href="#">Delete User</a></li>
-                                            <li><a href="#">Inactive User</a></li>
-                                            <li><a href="#">Active User</a></li>
-                                        </ul>
+                                        <select class="ec-search-cat-title">All <i class="fa-solid fa-chevron-down"></i>
+                                        
+                                            <option><a href="#">All User</a></option>
+                                            <option><a href="#">Delete User</a></option>
+                                            <option><a href="#">Inactive User</a></option>
+                                            <option><a href="#">Active User</a></option>
+                                       
+                                        </select>
+                                        
                                     </div>
                                     <input class="form-control" placeholder="Search Here..." type="text">
                                     <button class="search_submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>

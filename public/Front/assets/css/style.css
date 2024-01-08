@@ -16967,7 +16967,7 @@ h2, h3, h4, h5, h6 {
 
 /*----  Desktop search  ----*/
 .header-search {
-  width: 500px;
+  width: 100%;
   position: relative;
 }
 .header-search .form-control {
@@ -32409,4 +32409,27 @@ height:45px;
 }
 .ec-header-bottom {
   padding: 15px 0 !important;
+}
+.ec-header-bottons .dropdown{
+  position: relative;
+}
+.dropdown-menus {
+  position: absolute;
+  top: 100%;
+  background-color: #fff;
+  z-index: 50;
+  width: 120px;
+  border-radius: 4px;
+  /* box-shadow: 2px -1px 7px #eee; */
+ display: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+ul.dropdown-menus li {
+  padding: 5px 5px;
+}
+ul.dropdown-menus li:hover {
+  background-color: #F8F9FA;
+}
+.dropdown:hover > .dropdown-menus{
+  display: block !important;
 }
