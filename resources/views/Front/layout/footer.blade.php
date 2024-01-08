@@ -731,6 +731,16 @@ document.getElementById("defaultOpen").click();
   autoplaySpeed: 4000,
 });
 </script>
+<script>
+$(document).ready(function(){
+  $(".cross-fade i").click(function(){
+    $(".ec-side-cart-overlays").fadeOut();
+  });
+  $(".ec-header-btn i").click(function(){
+    $(".ec-side-cart-overlays").fadeIn();
+  });
+});
+</script>
 @stack('scripts')
 </body>
 

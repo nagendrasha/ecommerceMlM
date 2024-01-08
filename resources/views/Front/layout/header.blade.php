@@ -169,7 +169,7 @@
                            </a>
                            <!-- Header Cart End -->
                            <!-- Header menu Start -->
-                           <a href="#ec-mobile-menu" class="ec-header-btn ec-side-toggle d-lg-none">
+                           <a href="#ec-mobile-menu" class="ec-header-btn d-lg-none">
                                <i class="ecicon eci-bars"></i>
                            </a>
                            <!-- Header menu End -->
@@ -212,10 +212,10 @@
                                 
                            <div class="ec-header-bottons">
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <button class=" dropdown-toggle" type="button" id="dropdownMenuButton1">
                                    @if(!Auth::check()) Login @else {{ucwords(Auth::User()->name)}} @endif
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menus">
                                     @if(!Auth::check())
                                     <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                                     <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
@@ -452,7 +452,28 @@
     display:block;
 }
    </style>
-   <div class="ec-side-cart-overlay"></div>
+   <div class="ec-side-cart-overlays">
+    <div class="cross-fade"><i class="fa-solid fa-circle-xmark"></i></div>
+    <div class="mobile-header-logo">
+        <a href="{{url('/')}}"><img src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo"/><img
+                class="dark-logo" src="{{asset('Front/assets/images/logo/logo.png')}}" alt="Site Logo"
+                style="display: none;" /></a>
+    </div>
+    <ul class="navs">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">faqs</a></li>
+        <li><a href="">Track Order</a></li>
+        <li><a href="">Blogs</a></li>
+        <li><a href="">Contact</a></li>
+    </ul>
+    <div class="ec-footer-widget ec-share mt-5">
+        <ul class="mobile-flex">
+            <li class="ec-share-link"><a href="#"><img src="http://localhost/ecommerceMLM/public/Front/assets/images/icons/iphone.png" alt=""></a></li>
+            <li class="ec-share-link"><a href="#"><img src="http://localhost/ecommerceMLM/public/Front/assets/images/icons/google.png" alt=""></a></li>
+        </ul>
+    </div>
+   </div>
    <div id="ec-side-cart" class="ec-side-cart">
        <div class="ec-cart-inner">
            <div class="ec-cart-top">
