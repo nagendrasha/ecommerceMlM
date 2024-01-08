@@ -36,6 +36,11 @@
 
    <link rel="stylesheet" href="{{asset('Front/assets/css/responsive.css')}}" />
    <link rel="stylesheet" href="{{asset('Front/assets/css/demo5.css')}}" />
+   <script>
+        window.Laravel = {!! json_encode([
+            'csrfToken' => csrf_token(),
+        ]) !!};
+    </script>
 
    @stack('extra_links')
    <style>
