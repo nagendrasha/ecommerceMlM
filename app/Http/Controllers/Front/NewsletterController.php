@@ -20,7 +20,12 @@ class NewsletterController extends Controller
 
         DB::table('newsletters')->insert($values);
 
-        return redirect()->route('frontend_index')->with('success_message', 'Successfully Record Created');
+        return redirect()->route('frontend_newsletter_thankyou')->with('success_message', 'Successfully Record Created');
+    }
+    
+    public function newsletterthankyou(Request $request)
+    {
+        return view('Front.news_letter_thank_you');
     }
     
 }
