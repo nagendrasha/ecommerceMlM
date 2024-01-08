@@ -22,7 +22,7 @@
                                             <li><a href="#">Active User</a></li>
                                         </ul>
                                     </div>
-                                    <input class="form-control" placeholder="Search Here..." type="text">
+                                    <input class="form-control" placeholder="Search Name,Email,Phone..." type="text">
                                     <button class="search_submit" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </form>
                             </div>

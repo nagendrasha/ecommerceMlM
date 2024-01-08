@@ -200,7 +200,7 @@
                            <div class="header-search">
                                <form class="ec-search-group-form" action="#">
                                    
-                                   <input class="form-control" placeholder="Search Here..." type="text">
+                                   <input class="form-control" placeholder="Search Product Name..." type="text">
                                    <button class="search_submit" type="submit"><i class="ecicon eci-search"></i></button>
                                </form>
                            </div>
@@ -274,7 +274,7 @@
                                        <li><a href="#">Shoes</a></li>
                                    </ul>
                                </div>
-                               <input class="form-control" placeholder="Search Here..." type="text">
+                               <input class="form-control" placeholder="Search Product Name..." type="text">
                                <button class="search_submit" type="submit"><i class="ecicon eci-search"></i></button>
                            </form>
                        </div>

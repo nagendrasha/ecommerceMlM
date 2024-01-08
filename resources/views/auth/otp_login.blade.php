@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="card-body p-5">
-                    <h4 class="text-dark mb-5">Sign In</h4>
+                    <h4 class="text-dark mb-5">Sign In With OTP</h4>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -130,34 +130,18 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group col-md-12 ">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="current-password" placeholder="Password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
+                           
 
                             <div class="col-md-12">
                                 <div class="d-flex my-2 justify-content-between">
-                                    <div class="d-inline-block mr-3">
-                                        <div class="form-check"><label for="remember">Remember me</label>
-                                            <input class="form-check-input" type="checkbox" name="remember"
-                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        </div>
-                                    </div>
+                                    
 
                                     @if (Route::has('password.request'))
-                                    <p><a class="text-blue" href="{{ route('password.request') }}">Forgot Password?</a></p>
+                                    <p><a class="text-blue" href="{{ route('login') }}">Login With Email?</a></p>
                                     @endif
-                                    <p><a class="text-blue" href="{{ route('otp_login_page') }}">Login With OTP?</a></p>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Send OTP</button>
 
                                 {{-- <p class="sign-upp">Don't have an account yet ?
                                     <a class="text-blue" href="#">Sign Up</a>

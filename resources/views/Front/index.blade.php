@@ -1711,7 +1711,7 @@
                 <div class="ec_ser_inner">
                     <div class="ec-service-image">
                         @if(File::exists($service->image))
-                        <img src="{{url('/')}}/{{$service->image}}" width="20px" alt="{{$service->name}}">
+                        <img style="width:42px" src="{{url('/')}}/{{$service->image}}" width="20px" alt="{{$service->name}}">
                         @else
                         No Image
                         @endif
