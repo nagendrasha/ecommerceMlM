@@ -47,6 +47,7 @@
                                 <thead>
                                     <tr>
                                         <th>Email</th>
+                                        <th>Created At</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -56,23 +57,9 @@
                                     @foreach($newsletters as $data)
                                     <tr>
                                         <td>{{$data->email}}</td>
+                                        <td>{{$data->created_at}}</td>
                                         <td>
-                                            <div class="btn-group mb-1">
-                                                <button type="button" class="btn btn-outline-success">Info</button>
-                                                <button type="button"
-                                                    class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                                    data-display="static">
-                                                    <span class="sr-only">Info</span>
-                                                </button>
-
-                                                <div class="dropdown-menu">
-                                                    <button class="dropdown-item"
-                                                        onclick="editBrand('{{$data->id}}')">Edit</button>
-                                                    <button class="dropdown-item"
-                                                        onclick="deleteBrand('{{$data->id}}')">Delete</button>
-                                                </div>
-                                            </div>
+                                            <a class="danger" href="{{route('admin_newsletter_delete',encrypt($data->id))}}"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

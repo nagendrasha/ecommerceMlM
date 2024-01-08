@@ -50,8 +50,9 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Contact No</th>
-                                        <th>Message</th>
-                                        {{-- <th>Action</th> --}}
+                                        <th>Created Date</th>
+                                        {{-- <th>Message</th> --}}
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
@@ -59,33 +60,64 @@
                                     @if($contactuses->count())
                                     <?php $i= 0;?>
                                     @foreach($contactuses as $data)
-                                    <?php $i++;?>
+                                    <?php $i++;
+                                        // print_r($data);
+                                    ?>
                                     <tr>
                                         <td>{{$i}}</td>
                                         
                                         <td>{{$data->first_name}} {{$data->last_name}}</td>
                                         <td>{{$data->email_id}}</td>
                                         <td>{{$data->phone_number}}</td>
-                                        <td>{{$data->comment}}</td>
+                                        <td>{{$data->created_at}}</td>
                                         
-                                        {{-- <td>
-                                            <div class="btn-group mb-1">
-                                                <button type="button" class="btn btn-outline-success">Info</button>
-                                                <button type="button"
-                                                    class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-                                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                                    data-display="static">
-                                                    <span class="sr-only">Info</span>
-                                                </button>
-
-                                                <div class="dropdown-menu">
-                                                    <button class="dropdown-item"
-                                                        onclick="editBrand('{{$data->id}}')">Edit</button>
-                                                    <button class="dropdown-item"
-                                                        onclick="deleteBrand('{{$data->id}}')">Delete</button>
+                                        <td>
+                                           
+                                              <button type="button" class="success" data-bs-toggle="modal" data-bs-target="#detail_{{ $data->id}}">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                              </button>
+                                              
+                                              <!-- Modal -->
+                                              <!-- Modal -->
+                                                <div class="modal fade" id="detail_{{ $data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">{{$data->first_name}} {{$data->last_name}}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            {{$data->comment}}
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td> --}}
+                                              {{-- <div class="modal fade" id="detail_{{ $data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">{{$data->first_name}} {{$data->last_name}}</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <h6>Detail</h6>
+                                                      <p>{{$data->comment}}</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                      <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div> --}}
+                                            <a class="danger" href="{{route('admin_contactus_delete',encrypt($data->id))}}"><i class="fa fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                     @endif

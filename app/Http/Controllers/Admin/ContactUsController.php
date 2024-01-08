@@ -19,38 +19,12 @@ class ContactUsController extends Controller
     public function list()
     {
         $data['nav'] = $this->nav;
-        // $data['slider'] = DB::table('contactuses')->where('deleted', 0)->orderBy('sort', 'ASC')->get();
-        $data['contactuses'] = DB::table('contactuses')->get();
+        $data['contactuses'] = DB::table('contactuses')->where('deleted', 0)->get();
         return view('admin.contactus.list', $data);
     }
 
 
-    public function Create(Request $request)
-    {
-
-        $data['nav'] = $this->nav;
-        if ($request->isMethod('get')) {
-            return view('admin.website.slider.create', $data);
-        } else {
-            $validated = $request->validate([
-                'title' => 'required|min:5|max:255',
-                'link' => 'nullable|url',
-            ], [
-                'title.required' => 'The Title field is required.',
-                'title.min' => 'The Title field is required min 5 characters.',
-                'title.max' => 'The Title field is required max 50 characters.',
-                'title.max' => 'The Title field is required max 50 characters.',
-                'link.url' => 'Please Check your URL.',
-            ]);
-            $values = $request->all();
-            
-
-            DB::table('contactuses')->insert($values);
-
-            return redirect()->route('admin_slider_list')->with('success_message', 'Successfully Record Created');
-        }
-    }
-
+   
     public function Edit(Request $request, $id)
     {
 
@@ -95,11 +69,11 @@ class ContactUsController extends Controller
 
     public function Delete($id)
     {
-        $idRemoved = DB::table('sliders')->where('id', decrypt($id))->update(['deleted' => 1]);
+        $idRemoved = DB::table('contactuses')->where('id', decrypt($id))->update(['deleted' => 1]);
         if ($idRemoved) {
-            return redirect()->route('admin_slider_list')->with('success_message', 'Successfully Record Removed');
+            return redirect()->route('admin_contactus_list')->with('success_message', 'Successfully Record Removed');
         } else {
-            return redirect()->route('admin_slider_list')->with('error_message', 'Something went wrong');
+            return redirect()->route('admin_contactus_list')->with('error_message', 'Something went wrong');
         }
     }
 }
