@@ -181,6 +181,9 @@
                     <li class="has-sub">
                         <a href="{{route('admin_service_list')}}">Services</a>
                     </li>
+                    <li class="has-sub">
+                        <a href="{{route('admin_pages_list')}}">Pages</a>
+                    </li>
 
                 </ul>
             </div>
