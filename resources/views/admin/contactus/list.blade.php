@@ -69,7 +69,10 @@
                                         <td>{{$data->first_name}} {{$data->last_name}}</td>
                                         <td>{{$data->email_id}}</td>
                                         <td>{{$data->phone_number}}</td>
-                                        <td>{{$data->created_at}}</td>
+                                        <td>@php
+                                            $created_at =  date("d-F-Y H:i:s a", strtotime($data->created_at));
+                                        @endphp
+                                            {{$created_at}}</td>
                                         
                                         <td>
                                            
@@ -87,11 +90,13 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            {{$data->comment}}
+                                                           <p><b>Name: </b>{{$data->first_name}} {{$data->last_name}}</p>
+                                                            <p><b>Email: </b>{{$data->email_id}}</p>
+                                                            <p><b>Phone Number: </b>{{$data->phone_number}}</p>
+                                                           <p><b>Comment: </b> {{$data->comment}}</p> 
                                                         </div>
                                                         <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                         </div>
                                                     </div>
                                                     </div>
