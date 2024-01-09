@@ -224,7 +224,7 @@
                                 </button>
                                 <ul class="dropdown-menus">
                                     @if(!Auth::check())
-                                    <li><a class="dropdown-item" href="{{route('login')}}">With Email</a></li>
+                                    <li><a class="dropdown-item" href="{{route('login')}}">With Email </a></li>
                                     <li><a class="dropdown-item" href="{{route('otp_login_page')}}">With OTP</a></li>
                                     <li><a class="dropdown-item" href="{{route('register')}}">Register</a></li>
                                     @elseif(Auth::check() && Auth::User()->role == 1)
