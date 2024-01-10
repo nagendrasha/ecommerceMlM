@@ -6,11 +6,11 @@
         <div class="content">
             <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
                 <div>
-                    <h1>Edit {{ $nav }}</h1>
+                    <h1>{{ $nav }}</h1>
                     <p class="breadcrumbs"><span><a href="{{ route('admin_dashboard') }}">Home</a></span>
                         <a href="{{ route('admin_slider_list') }}"><span><i
-                                    class="mdi mdi-chevron-right"></i></span>{{ $nav }} List </a>
-                        <span><i class="mdi mdi-chevron-right"></i></span>Edit {{ $nav }}
+                                    class="mdi mdi-chevron-right"></i></span>{{ $nav }}</a>
+                        {{-- <span><i class="mdi mdi-chevron-right"></i></span>Edit {{ $nav }} --}}
                     </p>
                 </div>
 

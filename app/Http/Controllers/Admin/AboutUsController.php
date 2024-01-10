@@ -10,7 +10,7 @@ class AboutUsController extends Controller
 {
 
 
-    public $nav = "About";
+    public $nav = "About Us";
 
     public function Index(Request $request)
     {
