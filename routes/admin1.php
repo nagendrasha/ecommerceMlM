@@ -18,15 +18,15 @@ Route::group(['prefix' => 'user', 'as'=>'user_'], function () {
 });
 
 // Route::get('/about-us',[AboutUsController::class,'Index'])->name('aboutus');
-// Route::any('/about-us-edit',[AboutUsController::class,'Edit'])->name('edit');
+Route::any('/about-us',[AboutUsController::class,'Index'])->name('aboutus');
 
 
-Route::group(['prefix' => 'about', 'as'=>'about_'], function () {
-    Route::get('list', [AboutUsController::class, 'List'])->name('list');
-    Route::any('create', [AboutUsController::class, 'Create'])->name('create');
-    Route::any('edit/{id}', [AboutUsController::class, 'Edit'])->name('edit');
-    Route::get('delete/{id}', [AboutUsController::class, 'Delete'])->name('delete');
-});
+// Route::group(['prefix' => 'about', 'as'=>'about_'], function () {
+//     Route::get('list', [AboutUsController::class, 'List'])->name('list');
+//     Route::any('create', [AboutUsController::class, 'Create'])->name('create');
+//     Route::any('edit/{id}', [AboutUsController::class, 'Edit'])->name('edit');
+//     Route::get('delete/{id}', [AboutUsController::class, 'Delete'])->name('delete');
+// });
 
 Route::group(['prefix' => 'slider', 'as'=>'slider_'], function () {
     Route::get('list', [SliderController::class, 'List'])->name('list');

@@ -173,7 +173,7 @@
                         <a href="{{route('admin_blogs_list')}}">Blog</a>
                     </li>
                     <li class="has-sub">
-                        <a href="{{route('admin_about_list')}}">About US</a>
+                        <a href="{{route('admin_aboutus')}}">About US</a>
                     </li>
                     <li class="has-sub">
                         <a href="{{route('admin_faq_list')}}">FAQ</a>
