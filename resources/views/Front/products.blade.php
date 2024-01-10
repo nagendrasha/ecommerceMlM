@@ -138,6 +138,8 @@
                         <div class="row">
                             @if($products)
                             @foreach($products as $data)
+                            {{ucwords(Auth::User()->name)}}
+                            <br>
                             {{ucwords(Auth::User()->id)}}
                             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                 <div class="ec-product-inner">
@@ -157,8 +159,10 @@
                                                         class="fi fi-rr-arrows-repeat"></i></a>
                                                 <button title="Add To Cart" class="add-to-cart"><i
                                                         class="fi-rr-shopping-basket"></i> Add To Cart</button>
-                                                <a class="ec-btn-group wishlist" title="Wishlist"><i
-                                                        class="fi-rr-heart"></i></a>
+                                                {{-- <a href="{{route('frontend_add_to_wishlist', encrypt($data->id))}}" class="ec-btn-group wishlist" title="Wishlist"><i
+                                                        class="fi-rr-heart"></i></a> --}}
+                                                        <a href="{{route('frontend_add_to_wishlist', encrypt($data->id))}}" class="ec-btn-group wishlist" title="Wishlist"><i
+                                                            class="fi-rr-heart"></i></a>
                                             </div>
                                         </div>
                                     </div>

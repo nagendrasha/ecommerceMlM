@@ -26,8 +26,15 @@ class CartController extends Controller
         return view('Front.wishlist', $data);
     }
 
-    public function addToWishlist($id) {
-        dd($request->all());
+    public function addToWishlist(Request $request) {
+        // dd($request->all());
+        $values = $request->all();
+        
+        // if ($request->_token) {
+        //     unset($values['_token']);
+        // }
+
+        DB::table('wishlists')->insert($values);
     }
 
     public function addToCart(Request $request) {
