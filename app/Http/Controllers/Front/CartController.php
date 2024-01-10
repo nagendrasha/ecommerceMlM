@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use DB;
 
 class CartController extends Controller
 {
@@ -21,8 +22,12 @@ class CartController extends Controller
     }
 
     public function Wishlist(){
+        $data['wishlists'] = DB::table('wishlists')->where(['deleted'=>0])->orderBy('sort','ASC')->get();
+        return view('Front.wishlist', $data);
+    }
 
-        return view('Front.wishlist');
+    public function addToWishlist($id) {
+        dd($request->all());
     }
 
     public function addToCart(Request $request) {

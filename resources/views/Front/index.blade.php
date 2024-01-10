@@ -1525,7 +1525,7 @@
 
 <!-- ec testimonial Start -->
 <section class="section ec-test-section section-space-ptb-100 section-space-mt section-space-mb"
-        style="background-image: url('assets/images/testimonial/testimonial_bg.jpg');">
+        style="background-image: url('{{asset('Front/assets/images/testimonial/testimonial_bg.jpg')}}');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 section-title-block">
@@ -1541,7 +1541,70 @@
                         <li class="ec-test-item">
                             <div class="ec-test-inner">
                                 <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/1.jpg" /></div>
+                                        src="{{asset('Front/assets/images/testimonial/1.jpg')}}" /></div>
+                                <div class="ec-test-content">
+                                    <div class="ec-test-name">david james</div>
+                                    <div class="ec-test-designation">united states of america</div>
+                                    <div class="ec-test-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry</div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ec-test-item">
+                            <div class="ec-test-inner">
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="{{asset('Front/assets/images/testimonial/2.jpg')}}" /></div>
+                                <div class="ec-test-content">
+                                    <div class="ec-test-name">david james</div>
+                                    <div class="ec-test-designation">united states of america</div>
+                                    <div class="ec-test-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry</div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ec-test-item">
+                            <div class="ec-test-inner">
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="{{asset('Front/assets/images/testimonial/3.jpg')}}" /></div>
+                                <div class="ec-test-content">
+                                    <div class="ec-test-name">david james</div>
+                                    <div class="ec-test-designation">united states of america</div>
+                                    <div class="ec-test-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                    </div>
+                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry</div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="ec-test-item">
+                            <div class="ec-test-inner">
+                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
+                                        src="{{asset('Front/assets/images/testimonial/4.jpg')}}" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>
@@ -1561,47 +1624,7 @@
                         <li class="ec-test-item">
                             <div class="ec-test-inner">
                                 <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/2.jpg" /></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li>
-                        <li class="ec-test-item">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/3.jpg" /></div>
-                                <div class="ec-test-content">
-                                    <div class="ec-test-name">david james</div>
-                                    <div class="ec-test-designation">united states of america</div>
-                                    <div class="ec-test-rating">
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                        <i class="ecicon eci-star fill"></i>
-                                    </div>
-                                    <div class="ec-test-desc">Lorem Ipsum is simply dummy text of the printing and
-                                        typesetting industry</div>
-
-                                </div>
-                            </div>
-                        </li>
-                        <li class="ec-test-item">
-                            <div class="ec-test-inner">
-                                <div class="ec-test-img"><img alt="testimonial" title="testimonial"
-                                        src="assets/images/testimonial/1.jpg" /></div>
+                                        src="{{asset('Front/assets/images/testimonial/5.jpg')}}" /></div>
                                 <div class="ec-test-content">
                                     <div class="ec-test-name">david james</div>
                                     <div class="ec-test-designation">united states of america</div>

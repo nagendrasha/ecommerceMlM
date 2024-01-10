@@ -128,7 +128,7 @@
                                 <option value="5">Price, high to low</option>
                             </select>
                         </div>
-                    </div>
+                    </div> 
                 </div>
                 <!-- Shop Top End -->
 
@@ -138,6 +138,7 @@
                         <div class="row">
                             @if($products)
                             @foreach($products as $data)
+                            {{ucwords(Auth::User()->id)}}
                             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 mb-6 pro-gl-content">
                                 <div class="ec-product-inner">
                                     <div class="ec-pro-image-outer">

@@ -30,6 +30,7 @@ Route::post('save-contact-us',[ContactUsController::class,'savecontactus'])->nam
 Route::post('save-news-letter',[NewsletterController::class,'savenewsletter'])->name('save_news_letter');
 Route::get('thankyou-newsletter',[NewsletterController::class,'newsletterthankyou'])->name('newsletter_thankyou');
 Route::get('thankyou-contact-us',[ContactUsController::class,'contactusthankyou'])->name('contactus_thankyou');
+Route::any('save-wishlist',[CartController::class,'addToWishlist'])->name('save_wishlist');
 
 
 
