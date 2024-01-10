@@ -32,12 +32,13 @@ class AboutUsController extends Controller
         if ($request->isMethod('get')) {
             return view('admin.website.about_us.edit', $data);
         } else {
-            $validated = $request->validate([
-                'name' => 'required|min:5|max:254',
-                'slug' => 'required|min:5|max:255|unique:blogs,slug,'.$decryptID,
-                'author' => 'nullable|min:5|max:254',
-            ]);
+            // $validated = $request->validate([
+            //     'name' => 'required|min:5|max:254',
+            //     'slug' => 'required|min:5|max:255|unique:blogs,slug,'.$decryptID,
+            //     'author' => 'nullable|min:5|max:254',
+            // ]);
             $values = $request->all();
+            // print_r($values);
             // dd($values);
             if ($request->hasFile('image')) {
                 $request->validate([
@@ -57,8 +58,8 @@ class AboutUsController extends Controller
             }
 
             DB::table('abouts')->where('id', decrypt($id))->update($values);
-
-            return redirect()->route('admin_about_list')->with('success_message', 'Successfully Record Updated');
+            // return view('admin.website.about_us.edit', $data);
+            return redirect()->route('admin_about_list' )->with('success_message', 'Successfully Record Updated');
         }
     }
 

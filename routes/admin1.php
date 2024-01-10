@@ -21,7 +21,7 @@ Route::group(['prefix' => 'user', 'as'=>'user_'], function () {
 // Route::any('/about-us-edit',[AboutUsController::class,'Edit'])->name('edit');
 
 
-Route::group(['prefix' => 'about', 'as'=>'about'], function () {
+Route::group(['prefix' => 'about', 'as'=>'about_'], function () {
     Route::get('list', [AboutUsController::class, 'List'])->name('list');
     Route::any('create', [AboutUsController::class, 'Create'])->name('create');
     Route::any('edit/{id}', [AboutUsController::class, 'Edit'])->name('edit');

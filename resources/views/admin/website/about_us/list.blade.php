@@ -14,7 +14,6 @@
                 </p>
             </div>
             <div>
-                <a href="{{route('admin_blogs_create')}}" class="btn btn-primary"> Add {{$nav}}</a>
             </div>
         </div>
         <div class="row">
@@ -65,7 +64,7 @@
                                         </td>
                                         <td>{{$data->name}}</td>
                                         <td>
-                                           <a class="success" href="{{route('admin_blogs_edit',encrypt($data->id))}}"><i class="fa fa-edit"></i></a>
+                                           <a class="success" href="{{route('admin_about_edit',encrypt($data->id))}}"><i class="fa fa-edit"></i></a>
                                         </td>
                                         
                                     </tr>
