@@ -13,13 +13,10 @@ class AddColorTagline extends Migration
      */
     public function up()
     {
-        //
         Schema::table('taglines', function (Blueprint $table) {
-            $table->text('color')->default('#000000')->after('link');
-            
-
+            $table->string('color', 7)->default('#000000')->after('link');
+            // Using string type with length 7 to store hex color codes.
         });
-
     }
 
     /**
@@ -29,6 +26,8 @@ class AddColorTagline extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('taglines', function (Blueprint $table) {
+            $table->dropColumn('color');
+        });
     }
 }

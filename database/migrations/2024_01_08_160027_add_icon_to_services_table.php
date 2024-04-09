@@ -14,7 +14,8 @@ class AddIconToServicesTable extends Migration
     public function up()
     {
         Schema::table('services', function (Blueprint $table) {
-            $table->text('icon')->default('fa fa-')->after('updated_at');
+            $table->string('icon', 255)->default('fa fa-')->after('updated_at');
+            // Using string type with a length of 255, assuming the maximum length needed for the icon name.
         });
     }
 
@@ -26,7 +27,7 @@ class AddIconToServicesTable extends Migration
     public function down()
     {
         Schema::table('services', function (Blueprint $table) {
-            //
+            $table->dropColumn('icon');
         });
     }
 }

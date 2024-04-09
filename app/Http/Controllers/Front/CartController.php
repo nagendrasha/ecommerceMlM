@@ -22,7 +22,7 @@ class CartController extends Controller
     }
 
     public function Wishlist(){
-        $data['wishlists'] = DB::table('wishlists')->where(['deleted'=>0])->orderBy('sort','ASC')->get();
+        $data['wishlists'] = DB::table('wishlists')->where(['deleted'=>0])->get();
         return view('Front.wishlist', $data);
     }
 
